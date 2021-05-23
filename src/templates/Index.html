@@ -6,64 +6,62 @@
 <div class="ro">
     <div class="column">
         <div class="card">
-            <p><i class="fa fa-user"></i></p>
-            <h3>11+</h3>
-            <p>Partners</p>
+            <img src="/public/images/jobs.png" alt="jobs">
+            <h3>3M+</h3>
+            <p>Jobs</p>
         </div>
     </div>
 
     <div class="column">
         <div class="card">
-            <p><i class="fa fa-check"></i></p>
+            <img height="65px" src="/public/images/courses.png" alt="courses">
             <h3>55+</h3>
-            <p>Projects</p>
+            <p>Courses</p>
         </div>
     </div>
 
     <div class="column">
         <div class="card">
-            <p><i class="fa fa-smile"></i></p>
-            <h3>100+</h3>
-            <p>Happy Clients</p>
+            <img height="65px" src="/public/images/industries.png" alt="industries">
+            <h3>66+</h3>
+            <p>Industries</p>
         </div>
     </div>
 
     <div class="column">
         <div class="card">
-            <p><i class="fa fa-coffee"></i></p>
+            <img height="65px" src="/public/images/new-jobs.png" alt="New careers">
             <h3>100+</h3>
-            <p>Meetings</p>
+            <p>Emerging Careers</p>
         </div>
     </div>
 </div>
 
 <section class="section-features">
     <div class="row">
-        <h2>Get food fast &mdash; not fast food.</h2>
+        <h2>Find the right courses for your perfect career!</h2>
         <p class="long-copy">
-            Hello, we’re Omnifood, your new premium food delivery service. We know you’re always busy. No time for cooking. So let us
-            take care of that, we’re really good at it, we promise!
+            Alison's Career Guide is your one-stop source to explore and discover the world's careers, and to access free courses within your chosen field. In Alison's Career Guide, you can learn more about jobs that people do every day, and search for your perfect career by Industry, Career Path or Occupation. For each Occupation, you will find all related Alison Certificate and Diploma courses that will help you gain the skills and qualifications you need to succeed. 
         </p>
     </div>
 
     <div class="row">
         <div class="col span-1-of-4 box">
             <i class="fas fa-air-freshener icon-big"></i>
-            <h3>Up to 365 days/year</h3>
-            <p> Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. You can
-                also choose to order more flexibly if that's your style.
+            <h3>Performance Analysis</h3>
+            <p> Discover a variety of high growth career options that capitalize on your strengths and are on demand globally
             </p>
         </div>
         <div class="col span-1-of-4 box">
             <i class="fas fa-air-freshener icon-big"></i>
-            <h3> Ready in 20 minutes</h3>
+            <h3>Industry Discovery</h3>
             <p> You're only twenty minutes away from your delicious and super healthy meals delivered right to your home.
                 We work with the best chefs in each town to ensure that you're 100% happy.
             </p>
         </div>
         <div class="col span-1-of-4 box">
             <i class="fas fa-air-freshener icon-big"></i>
-            <h3>100% organic</h3>
+            <h3>Programme Discovery</h3>
             <p> All our vegetables are fresh, organic and local. Animals are raised without added hormones or antibiotics.
                 Good for your health, the environment, and it also tastes better!
 
@@ -71,7 +69,7 @@
         </div>
         <div class="col span-1-of-4 box">
             <i class="fas fa-air-freshener icon-big"></i>
-            <h3>Order anything</h3>
+            <h3>Occupations Discovery</h3>
             <p> We don't limit your creativity, which means you can order whatever you feel like. You can also choose from
                 our menu containing over 100 delicious meals. It's up to you!
 
@@ -84,7 +82,7 @@
     <div class="row">
         <h2>OUR CUSTOMERS CAN'T LIVE WITHOUT US </h2>
     </div>
-    <div class="row">
+    <div class="row" style="display: flex">
         <div class="col span-1-of-3">
             <blockquote>
                 Omnifood is just awesome! I just launched a startup which leaves me with no time for cooking, so Omnifood is a life-saver.
@@ -117,7 +115,7 @@
     </div>
 </section>
 
-<section class="section-form" style="margin-bottom: 450px">
+<section class="section-form">
     <div class="row">
         <h2>WE'RE HAPPY TO HEAR FROM YOU</h2>
     </div>
@@ -178,3 +176,74 @@
             </div>
         </form>
 </section>
+
+<style>
+.section-testimonials {
+    background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0.7)),to(rgba(0, 0, 0, 0.7))), url(img/back-customers.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("/public/images/back-customers.jpg");
+    background-size: cover;
+    color:white;
+    background-attachment: fixed;
+}
+
+blockquote:before {
+    content: "\201C";
+    font-size: 450%;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    bottom: 1;
+}
+
+blockquote {
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    display: block;
+    position: relative;
+    margin-top: 35px;
+}
+
+cite {
+    display: block;
+    font-size: 90%;
+    margin-top: 10px;
+
+}
+
+cite img {
+    height: 45px;
+    width: auto;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.row {
+    zoom: 1;
+}
+
+.row:before,
+.row:after {
+    content:"";
+    display:table;
+}
+.row:after {
+    clear:both;
+}
+
+.section-testimonials .row {
+    max-width: 1140px;
+    margin: 0 auto 0 auto;
+}
+
+.section-testimonials .col {
+    width: 100%;
+    margin: 1% 0 1% 0%;
+}
+
+.section-testimonials .span-1-of-3 {
+    width: 32.26%; 
+}
+
+</style>
