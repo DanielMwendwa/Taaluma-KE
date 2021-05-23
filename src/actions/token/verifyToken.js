@@ -1,5 +1,5 @@
 // Dependencies.
-const database = require("../../lib/database");
+const connection = require("../../db");
 const Token = require("../../models/Token");
 
 /**
@@ -8,8 +8,15 @@ const Token = require("../../models/Token");
  * @return { Promise<boolean | Token> }
  */
 const verifyToken = async (id) => {
+    const db = connection.getDb();
+
     // Lookup the token.
-    const tokenData = await database.read("tokens", id);
+    let tokenData;
+    try {
+        tokenData = await db.collection("tokens").findOne({id})
+    } catch (e) {
+        console.error(e);
+    }
 
     if (!tokenData) {
         return false;
