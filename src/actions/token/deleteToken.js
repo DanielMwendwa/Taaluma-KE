@@ -1,5 +1,5 @@
 // Dependencies.
-const database = require("../../lib/database");
+const connection = require("../../db");
 const Token = require("../../models/Token");
 const validator = require("../../lib/validator");
 const ResponseContainer = require("../../models/ResponseContainer");
@@ -10,6 +10,8 @@ const ResponseContainer = require("../../models/ResponseContainer");
  * @return { Promise }
  */
 const deleteToken = async (requestData) => {
+    const db = connection.getDb();
+
     // Check that the id is valid.
     const id = validator.parseString(requestData.queryStringObject.id);
 
@@ -18,7 +20,12 @@ const deleteToken = async (requestData) => {
     }
 
     // Lookup the token.
-    const tokenData = await database.read("tokens", id);
+    let tokenData;
+    try {
+        tokenData = await db.collection("tokens").findOne({id})
+    } catch (e) {
+        console.error(e);
+    }
     if (!tokenData) {
         return new ResponseContainer(400, { error: "Could not find the specified token" });
     }
@@ -27,7 +34,11 @@ const deleteToken = async (requestData) => {
     const token = new Token().fromSnapshot(tokenData);
 
     // Delete token from database.
-    await database.delete("tokens", token.id);
+    try {
+        await db.collection("tokens").deleteOne({id: token._id});
+    } catch (e) {
+        console.error(e);
+    }
 
     return new ResponseContainer(200);
 };
