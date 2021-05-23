@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/public/styles/auth.css">
+
+<div class="login-wrapper">
+    <form class="form" id="userSessionCreate" action="/api/tokens" method="POST">
+        <img src="/public/images/avatar.png" alt="" />
+        <h2>Login</h2>
+        <div class="formError alert alert-danger" style="border: solid 2px brown;">danger</div>
+        <div class="formSuccess alert alert-success" style="border: solid 2px brown;">error</div>
+        <div class="input-group">
+            <input type="email" name="email" id="email" required />
+            <label for="email">Email</label>
+        </div>
+        <div class="input-group">
+            <input type="password" name="password" id="password" required />
+            <label for="password">Password</label>
+        </div>
+        <input type="submit" value="Login" class="submit-btn" />
+        <a href="#forgot-pw" class="forgot-pw">Forgot Password?</a>
+    </form>
+
+    <div id="forgot-pw">
+        <form action="" class="form">
+            <a href="#" class="close">&times;</a>
+            <h2>Reset Password</h2>
+            <div class="input-group">
+                <input type="email" name="email" id="email2" required />
+                <label for="email">Email</label>
+            </div>
+            <input type="submit" value="Submit" class="submit-btn" />
+        </form>
+    </div>
+</div>
+
+<!-- Load page specific JavaScript -->
+<script type="text/javascript" charset="UTF-8" src="/public/scripts/userSessionCreate.js"></script>
