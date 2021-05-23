@@ -1,5 +1,5 @@
 // Dependencies.
-const database = require("../../lib/database");
+const connection = require("../../db");
 const Token = require("../../models/Token");
 const ResponseContainer = require("../../models/ResponseContainer");
 
