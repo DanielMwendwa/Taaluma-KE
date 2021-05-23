@@ -9,6 +9,8 @@ const ResponseContainer = require("../../models/ResponseContainer");
  * @return {Promise}
  */
 const postToken = async (requestData) => {
+    const db = connection.getDb();
+
     // Get raw token data.
     const rawTokenData = requestData.payload;
 
@@ -21,7 +23,13 @@ const postToken = async (requestData) => {
     }
 
     // Lookup the user who matches that email address.
-    const userData = await database.read("users", token.email);
+    let userData;
+    try {
+        userData = await db.collection("users").findOne({email: token.email})
+    } catch (e) {
+        console.error(e);
+    }
+
     if (!userData) {
         return new ResponseContainer(400, { error: "Could not find specified user" });
     }
@@ -32,7 +40,12 @@ const postToken = async (requestData) => {
     }
 
     // If valid, create a new token.
-    await database.create("tokens", token.id, token);
+    try {
+        await db.collection("tokens").insertOne(token);
+    } catch (e) {
+        console.error(e);
+    }
+
     return new ResponseContainer(200, token.toObject());
 };
 
