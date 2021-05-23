@@ -1,2 +1,2 @@
 # Taaluma-KE
-node v15.6.0
+node v14.16.1
