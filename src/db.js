@@ -4,7 +4,7 @@
 
 // Dependencies.
 const {MongoClient} = require("mongodb");
-const {uri} = require("./config").mongoDB;
+const {uri, dbName} = require("./config").mongoDB;
 
 // Container for the module (to be exported).
 const connection = {};
@@ -18,7 +18,7 @@ connection.init = async () => {
     try {
         // Connect to the MongoDB cluster
         await client.connect();
-        _db = client.db("Taaluma");
+        _db = client.db(dbName);
         console.log("\x1b[35m%s\x1b[0m", "Connected successfully to DB");
     } catch (e) {
         console.error(e);
