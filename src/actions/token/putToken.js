@@ -11,14 +11,20 @@ const ResponseContainer = require("../../models/ResponseContainer");
  */
 const putToken = async (requestData) => {
     const db = connection.getDb();
-    
+
     const id = validator.parseString(requestData.payload.id);
     if (!id) {
         return new ResponseContainer(400, { error: "Missing required field(s) or field(s) are invalid" });
     }
 
     // Lookup the token.
-    const tokenData = await database.read("tokens", id);
+    let tokenData;
+    try {
+        tokenData = await db.collection("tokens").findOne({ id });
+    } catch (e) {
+        console.error(e);
+    }
+
     if (!tokenData) {
         return new ResponseContainer(400, { error: "Token does not exists" });
     }
@@ -34,8 +40,24 @@ const putToken = async (requestData) => {
     // Set the expiration an hour from now.
     token.prolong();
 
+    // Create a filter for a doc to update
+    const filter = { id };
+
+    // Create a document that sets the changed values
+    const updateDoc = {
+        $set: { ...token },
+    };
+
+    // This option instructs the method to create a document if no documents match the filter
+    const options = { upsert: true };
+
     // Store the new updates.
-    await database.update("tokens", id, token);
+    try {
+        await db.collection("tokens").updateOne(filter, updateDoc, options);
+    } catch (e) {
+        console.error(e);
+    }
+
     return new ResponseContainer(200);
 };
 
