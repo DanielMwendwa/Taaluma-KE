@@ -1,7 +1,3 @@
-/**
- * Library for storing and editing data.
- */
-
 // Dependencies.
 const {MongoClient} = require("mongodb");
 const {uri, dbName} = require("./config").mongoDB;
