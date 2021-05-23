@@ -4,6 +4,7 @@
 
 // Dependencies.
 const {MongoClient} = require("mongodb");
+const {uri} = require("./config").mongoDB;
 
 // Container for the module (to be exported).
 const connection = {};
@@ -12,7 +13,6 @@ let _db;
 
 // Init script.
 connection.init = async () => {
-    const uri = "mongodb+srv://mwesh:12345Admin@cluster0.byfxq.mongodb.net/Taaluma?retryWrites=true&w=majority";
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
     try {
