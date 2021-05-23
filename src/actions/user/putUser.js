@@ -42,7 +42,7 @@ const putUser = async (requestData) => {
     // Update user data.
     user.updateFromObject(requestData.payload);
 
-    // Create a filter for a movie to update
+    // Create a filter for a doc to update
     const filter = { email };
 
     // Create a document that sets the changed values

@@ -1,5 +1,5 @@
 // Dependencies.
-const database = require("../../lib/database");
+const connection = require("../../db");
 const Token = require("../../models/Token");
 const validator = require("../../lib/validator");
 const ResponseContainer = require("../../models/ResponseContainer");
@@ -10,6 +10,8 @@ const ResponseContainer = require("../../models/ResponseContainer");
  * @return { Promise }
  */
 const putToken = async (requestData) => {
+    const db = connection.getDb();
+    
     const id = validator.parseString(requestData.payload.id);
     if (!id) {
         return new ResponseContainer(400, { error: "Missing required field(s) or field(s) are invalid" });
