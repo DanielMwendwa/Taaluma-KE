@@ -4,16 +4,16 @@ const Token = require("../../models/Token");
 
 /**
  * Verify if a given token id is valid and not expired.
- * @param { string } id - Token id.
+ * @param { string } _id - Token id.
  * @return { Promise<boolean | Token> }
  */
-const verifyToken = async (id) => {
+const verifyToken = async (_id) => {
     const db = connection.getDb();
 
     // Lookup the token.
     let tokenData;
     try {
-        tokenData = await db.collection("tokens").findOne({id})
+        tokenData = await db.collection("tokens").findOne({_id})
     } catch (e) {
         console.error(e);
     }

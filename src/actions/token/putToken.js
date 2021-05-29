@@ -12,15 +12,15 @@ const ResponseContainer = require("../../models/ResponseContainer");
 const putToken = async (requestData) => {
     const db = connection.getDb();
 
-    const id = validator.parseString(requestData.payload.id);
-    if (!id) {
+    const _id = validator.parseString(requestData.payload._id);
+    if (!_id) {
         return new ResponseContainer(400, { error: "Missing required field(s) or field(s) are invalid" });
     }
 
     // Lookup the token.
     let tokenData;
     try {
-        tokenData = await db.collection("tokens").findOne({ id });
+        tokenData = await db.collection("tokens").findOne({ _id });
     } catch (e) {
         console.error(e);
     }
@@ -41,7 +41,7 @@ const putToken = async (requestData) => {
     token.prolong();
 
     // Create a filter for a doc to update
-    const filter = { id };
+    const filter = { _id };
 
     // Create a document that sets the changed values
     const updateDoc = {

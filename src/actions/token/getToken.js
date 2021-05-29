@@ -13,16 +13,16 @@ const getToken = async (requestData) => {
     const db = connection.getDb();
 
     // Check that the id is valid.
-    const id = validator.parseString(requestData.queryStringObject.id);
+    const _id = validator.parseString(requestData.queryStringObject._id);
 
-    if (!id) {
+    if (!_id) {
         return new ResponseContainer(400, { error: "Missing required fields" });
     }
 
     // Lookup the token.
     let tokenData;
     try {
-        tokenData = await db.collection("tokens").findOne({id})
+        tokenData = await db.collection("tokens").findOne({_id})
     } catch (e) {
         console.error(e);
     }
