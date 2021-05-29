@@ -21,7 +21,7 @@ class Token {
     fromObject({ email, password }) {
         this.email = validator.parseEmail(email);
         this.hashedPassword = passwordHash(validator.parseString(password));
-        this.id = randomString(tokenIdLength);
+        this._id = randomString(tokenIdLength);
         this.expires = Date.now() + tokenLifeTime;
 
         // Return self instance.
@@ -32,14 +32,14 @@ class Token {
      * Create token object from database snapshot.
      * @param {string} email
      * @param {string} hashedPassword
-     * @param {string} id
+     * @param {string} _id
      * @param {boolean} expires
      * @return {Token}
      */
-    fromSnapshot({ email, hashedPassword, id, expires }) {
+    fromSnapshot({ email, hashedPassword, _id, expires }) {
         this.email = email;
         this.hashedPassword = hashedPassword;
-        this.id = id;
+        this._id = _id;
         this.expires = expires;
 
         // Return self instance.
@@ -51,7 +51,7 @@ class Token {
      * @return {boolean}
      */
     isValid() {
-        return this.email && this.hashedPassword && this.id && this.expires;
+        return this.email && this.hashedPassword && this._id && this.expires;
     }
 
     /**
@@ -77,7 +77,7 @@ class Token {
     toObject() {
         return {
             email: this.email,
-            id: this.id,
+            id: this._id,
             expires: this.expires,
         };
     }
