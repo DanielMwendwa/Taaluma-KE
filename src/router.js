@@ -8,6 +8,7 @@ const notFoundController = require("./controllers/notFoundController");
 const tokenController = require("./controllers/tokenController");
 const userController = require("./controllers/userController");
 const industriesController = require("./controllers/industriesController");
+const industryController = require("./controllers/industryController");
 const templateController = require("./controllers/templateController");
 const publicController = require("./controllers/publicController");
 
