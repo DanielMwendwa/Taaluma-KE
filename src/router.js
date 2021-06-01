@@ -33,6 +33,10 @@ router.routes = {
         controller: industriesController,
     },
 
+    "api/industry": {
+        controller: industryController,
+    },
+
     // Front-End specific routes.
     "": {
         controller: templateController,
