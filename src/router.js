@@ -58,21 +58,6 @@ router.routes = {
         data: { "head.title": "Login" },
     },
 
-    "user/cart/read": {
-        controller: templateController,
-        data: { "head.title": "Shopping Cart" },
-    },
-
-    "user/order/success": {
-        controller: templateController,
-        data: { "head.title": "Order has been paid" },
-    },
-
-    "user/order/create": {
-        controller: templateController,
-        data: { "head.title": "Checkout" },
-    },
-
     "user/dashboard": {
         controller: templateController,
         data: { "head.title": "User Dasboard" },
