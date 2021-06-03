@@ -12,37 +12,31 @@ industriesList.preloadData = () => {
 
     // Fetch the menu data.
     httpClient.request({ path: "/api/industries", method: "GET" }).then(({ statusCode, responsePayload }) => {
-        console.log(responsePayload);
         industriesList.items = responsePayload;
         responsePayload.forEach((menuItem) => {
-            const containerId = `menuItem_${menuItem.id}`;
+            const containerId = `menuItem_${menuItem.code}`;
             const menuItemElement = document.createElement("div");
-            menuItemElement.className = "card text-center";
+            // menuItemElement.className = "industry";
             menuItemElement.id = containerId;
             menuItemElement.innerHTML = `
-                <div class="card card1">
+                <div class="card card1 industry">
                     <div class="container">
                         <img src="/public/images/industries/${menuItem.code}.jpg" alt="${menuItem.title}">
                     </div>
                     <div class="details">
-                        <h3>${menuItem.title}</h3>
+                        <h3><a href="javascript: void(0);" class="main" id="${menuItem.code}">${menuItem.title}</a></h3>
                         <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p> -->
                     </div>
                 </div>`;
             industriesContainer.appendChild(menuItemElement);
 
-            // Add event listeners to "Add to Cart" button.
-            document.querySelector(`#${containerId} div`).addEventListener("click", (event) => {
-                event.preventDefault();
-
-                // Detect how many of items with current id are already in the basket.
-                // Then increment its value.
-                const basketItems = shoppingCart.cart.items || [];
-                const existingItem = basketItems.filter((basketItem) => basketItem.id === menuItem.id).pop();
-                const newQuantity = existingItem ? existingItem.quantity + 1 : 1;
-
-                shoppingCart.updateCart(httpClient, menuItem.id, newQuantity).then((shoppingCart) => {
-                    app.drawShoppingCartCounter(shoppingCart);
+            // Add event listeners to "Add to C" button.
+            document.querySelectorAll(".industry").forEach((item) => {
+                item.addEventListener("click", (event) => {
+                    if (event.target) {
+                        console.log(event.target.id);
+                        window.location = `/industry?code=${event.target.id}`;
+                    }
                 });
             });
         });

@@ -16,14 +16,13 @@ userAccountCreate.formSuccessProcessor = ({ detail: { formId, requestPayload, re
             // Display an error on the form if needed.
             if (newStatusCode !== 200) {
                 // Set the formError field with the error text
-                document.querySelector(`#${formId} .formError`).innerHTML =
+                document.querySelector(`#${formId} .error`).innerHTML =
                     "Sorry, an error has occured. Please try again.";
-                document.querySelector(`#${formId} .formError`).style.display = "block";
+                document.querySelector(`#${formId} .error`).style.display = "block";
             } else {
                 // If successful, set the token and redirect the user.
                 auth.setToken(newResponsePayload);
-                // window.location = "/user/dashboard";
-                window.location = "/industries/list";
+                window.location = "/industries";
             }
         });
 };

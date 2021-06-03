@@ -12,12 +12,14 @@ class User {
      * @param {string} name - User name.
      * @param {string} email - User email.
      * @param {string} password - User password.
+     * @param {boolean} isAdmin - Whether User is admin.
      * @return {User}
      */
-    fromObject({ name, email, password }) {
+    fromObject({ name, email, password, isAdmin=false }) {
         this.name = validator.parseString(name);
         this.email = validator.parseEmail(email);
         this.hashedPassword = passwordHash(validator.parseString(password));
+        this.isAdmin = isAdmin;
 
         // Return self instance.
         return this;
@@ -28,12 +30,14 @@ class User {
      * @param {string} name - User name.
      * @param {string} email - User email.
      * @param {string} hashedPassword - Hashed user password.
+     * @param {boolean} isAdmin - Whether User is admin.
      * @return {User}
      */
-    fromSnapshot({ name, email, hashedPassword }) {
+    fromSnapshot({ name, email, hashedPassword, isAdmin }) {
         this.name = name;
         this.email = email;
         this.hashedPassword = hashedPassword;
+        this.isAdmin = isAdmin;
 
         // Return self instance.
         return this;
@@ -82,6 +86,7 @@ class User {
         return {
             name: this.name,
             email: this.email,
+            isAdmin: this.isAdmin
         };
     }
 }

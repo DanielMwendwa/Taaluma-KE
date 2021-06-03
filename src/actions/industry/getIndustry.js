@@ -1,5 +1,6 @@
 // Dependencies.
 const connection = require("../../db");
+const validator = require("../../lib/validator");
 const ResponseContainer = require("../../models/ResponseContainer");
 
 /**
@@ -17,13 +18,11 @@ const getIndustries = async (requestData) => {
 
     // Lookup the industry.
     let industry;
-    let projection = {title: 1, careers: 1, _id: 0}
     try {
-        industry = await db.collection("industries").findOne({code}).project(projection);
+        industry = await db.collection("industries").findOne({ code });
     } catch (e) {
         console.error(e);
     }
-    
 
     return new ResponseContainer(200, industry);
 };

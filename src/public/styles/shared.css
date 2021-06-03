@@ -255,3 +255,7 @@ body.loggedIn a.loggedIn,
 body.loggedOut a.loggedOut {
     display: block;
 }
+
+li.appAdmin {
+    display: none;
+}

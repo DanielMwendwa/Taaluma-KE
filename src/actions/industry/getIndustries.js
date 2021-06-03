@@ -1,6 +1,7 @@
 // Dependencies.
 const connection = require("../../db");
 const ResponseContainer = require("../../models/ResponseContainer");
+const mailgun = require("../../lib/mailgun")
 
 /**
  * Get industries info.
@@ -9,6 +10,12 @@ const ResponseContainer = require("../../models/ResponseContainer");
  */
 const getIndustries = async (requestData) => {
     const db = connection.getDb();
+
+    // try {
+    //     await mailgun.sendEmail("nidahcarlos@gmail.com", "Taaluma", "message");
+    // } catch (error) {
+    //     console.log(error)
+    // }
 
     // Lookup the industries.
     let industries;

@@ -77,7 +77,7 @@ class Token {
     toObject() {
         return {
             email: this.email,
-            id: this._id,
+            _id: this._id,
             expires: this.expires,
         };
     }

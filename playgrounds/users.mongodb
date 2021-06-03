@@ -1,0 +1,5 @@
+use("taaluma");
+
+// db.users.drop();
+// db.users.dropIndex("createdAt_1")
+// db.account.getIndexes()

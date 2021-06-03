@@ -1,20 +1,20 @@
 /**
- * Industries request handlers.
+ * Account recovery request handlers.
  */
 
 // Dependencies.
-const getIndustries = require("../actions/industry/getIndustries");
+const postUserDetails = require("../actions/user/accountRecovery");
 const ResponseContainer = require("../models/ResponseContainer");
 
 /**
- * Industries controller.
+ * Account recovery controller.
  * @param {RequestData} requestData
  * @return {Promise}
  */
-industriesController = async (requestData) => {
+accountRecoveryController = async (requestData) => {
     switch (requestData.method) {
-        case "get":
-            return await getIndustries(requestData);
+        case "post":
+            return await postUserDetails(requestData);
 
         default:
             return new ResponseContainer(405, { error: "Method is not allowed" });
@@ -22,4 +22,4 @@ industriesController = async (requestData) => {
 };
 
 // Export the module.
-module.exports = industriesController;
+module.exports = accountRecoveryController;

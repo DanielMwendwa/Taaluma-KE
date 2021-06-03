@@ -1,11 +1,10 @@
-<link rel="stylesheet" href="/public/styles/auth.css">
+<link rel="stylesheet" href="/public/styles/auth.css" />
 
 <div class="login-wrapper">
     <form class="form" id="userSessionCreate" action="/api/tokens" method="POST">
         <img src="/public/images/avatar.png" alt="" />
         <h2>Login</h2>
-        <div class="formError alert alert-danger" style="border: solid 2px brown;">danger</div>
-        <div class="formSuccess alert alert-success" style="border: solid 2px brown;">error</div>
+        <div class="formError"></div>
         <div class="input-group">
             <input type="email" name="email" id="email" required />
             <label for="email">Email</label>
@@ -19,7 +18,7 @@
     </form>
 
     <div id="forgot-pw">
-        <form action="" class="form">
+        <form class="form" id="accountRecovery" action="/api/recovery" method="POST">
             <a href="#" class="close">&times;</a>
             <h2>Reset Password</h2>
             <div class="input-group">

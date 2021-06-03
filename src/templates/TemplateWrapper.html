@@ -5,9 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{head.title} | {global.appName}</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-        <link rel="stylesheet" href="/public/styles/shared.css">
-        <link rel="stylesheet" href="/public/styles/main.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="/public/styles/shared.css" />
+        <link rel="stylesheet" href="/public/styles/getInTouch.css" />
         <script type="text/javascript" charset="UTF-8" src="/public/scripts/httpClient.js"></script>
         <script type="text/javascript" charset="UTF-8" src="/public/scripts/auth.js"></script>
         <script type="text/javascript" charset="UTF-8" src="/public/scripts/formProcessor.js"></script>
@@ -31,12 +36,18 @@
                         <a href="/">Home</a>
                     </li>
                     <li class="main-nav__item loggedIn">
-                        <a href="/user/dashboard">Dashboard</a>
+                        <a href="/industries">Industries</a>
                     </li>
                     <li class="main-nav__item loggedIn">
-                        <a href="/user/dashboard">Student Portal</a>
+                        <a href="/clusters">Clusters</a>
                     </li>
                     <li class="main-nav__item loggedIn">
+                        <a href="/faq">FAQ</a>
+                    </li>
+                    <li class="main-nav__item loggedIn appAdmin">
+                        <a href="#">Student Portal</a>
+                    </li>
+                    <li class="main-nav__item loggedIn appAdmin">
                         <a href="/">Admin</a>
                     </li>
                     <li class="main-nav__item loggedIn">
@@ -71,6 +82,45 @@
             </ul>
         </nav>
         <main>{{pageContent}}</main>
+        <!-- SOCIAL PANEL HTML -->
+        <div class="social-panel-container">
+            <div class="social-panel">
+                <p>
+                    Created with <i class="fa fa-heart"></i> by
+                    <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+                </p>
+                <button class="close-btn"><i class="fas fa-times"></i></button>
+                <h4>Get in touch on</h4>
+                <ul>
+                    <li>
+                        <a href="https://www.patreon.com/florinpop17" target="_blank">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/florinpop1705" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://linkedin.com/in/florinpop17" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com/florinpop17" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/florinpop17" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <button class="floating-btn">Get in Touch</button>
         <footer class="main-footer">
             <nav>
                 <ul class="main-footer__links">
@@ -83,5 +133,6 @@
                 </ul>
             </nav>
         </footer>
+        <script src="/public/scripts/getInTouch.js"></script>
     </body>
 </html>

@@ -15,15 +15,16 @@ userAccountEdit.preloadData = () => {
     // Fetch the user data
     const queryStringObject = { email };
     httpClient
-        .request({ path: "/api/users", method: "GET", queryStringObject })
+        .request({ headers: { token: token._id }, path: "/api/users", method: "GET", queryStringObject })
         .then(({ statusCode, responsePayload }) => {
+            console.log(statusCode)
             if (statusCode === 200) {
                 // Put the data into the forms as values where needed
-                document.querySelector("#userAccountEdit input[name=email]").value = responsePayload.email;
-                document.querySelector("#userAccountEdit input[name=name]").value = responsePayload.name;
-                document.querySelector("#userAccountEdit input[name=address]").value = responsePayload.address;
-                document.querySelector("#userAccountEdit input[name=streetAddress]").value =
-                    responsePayload.streetAddress;
+                // document.querySelector("#userAccountEdit input[name=email]").value = responsePayload.email;
+                // document.querySelector("#userAccountEdit input[name=name]").value = responsePayload.name;
+                // document.querySelector("#userAccountEdit input[name=address]").value = responsePayload.address;
+                // document.querySelector("#userAccountEdit input[name=streetAddress]").value =
+                    // responsePayload.streetAddress;
             } else {
                 // If the request comes back as something other than 200, log the user our.
                 auth.logUserOut(httpClient).then(() => {
@@ -36,7 +37,7 @@ userAccountEdit.preloadData = () => {
 // Callback that is being called once userAccountEdit is successfully submit.
 userAccountEdit.formSuccessProcessor = ({ detail: { formId, requestPayload, responsePayload } }) => {
     // If forms saved successfully and they have success messages, show them.
-    document.querySelector("#userAccountEdit .formSuccess").style.display = "block";
+    // document.querySelector("#userAccountEdit .formSuccess").style.display = "block";
 };
 
 // Init user current page.
@@ -45,7 +46,7 @@ userAccountEdit.init = () => {
     userAccountEdit.preloadData();
 
     // Subscribe to form events.
-    document.addEventListener("userAccountEditFormSuccess", userAccountEdit.formSuccessProcessor);
+    // document.addEventListener("userAccountEditFormSuccess", userAccountEdit.formSuccessProcessor);
 };
 
 // Call the init processes after the window loads

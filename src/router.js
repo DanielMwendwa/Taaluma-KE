@@ -7,6 +7,7 @@ const pingController = require("./controllers/pingController");
 const notFoundController = require("./controllers/notFoundController");
 const tokenController = require("./controllers/tokenController");
 const userController = require("./controllers/userController");
+const accountRecoveryController = require("./controllers/accountRecoveryController")
 const industriesController = require("./controllers/industriesController");
 const industryController = require("./controllers/industryController");
 const templateController = require("./controllers/templateController");
@@ -24,6 +25,10 @@ router.routes = {
 
     "api/users": {
         controller: userController,
+    },
+
+    "api/recovery": {
+        controller: accountRecoveryController,
     },
 
     "api/tokens": {
@@ -63,12 +68,7 @@ router.routes = {
         data: { "head.title": "Login" },
     },
 
-    "user/dashboard": {
-        controller: templateController,
-        data: { "head.title": "User Dasboard" },
-    },
-
-    "industries/list": {
+    "industries": {
         controller: templateController,
         data: { "head.title": "Industry List" },
     },
@@ -76,6 +76,21 @@ router.routes = {
     "industry": {
         controller: templateController,
         data: { "head.title": "Industry" },
+    },
+
+    "faq": {
+        controller: templateController,
+        data: { "head.title": "FAQ" },
+    },
+
+    "clusters": {
+        controller: templateController,
+        data: { "head.title": "Clusters"}
+    },
+
+    "account/recovery": {
+        controller: templateController,
+        data: { "head.title": "Account Recovery"}
     }
 };
 

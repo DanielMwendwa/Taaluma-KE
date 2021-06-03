@@ -2,6 +2,7 @@
 const connection = require("../../db");
 const User = require("../../models/User");
 const ResponseContainer = require("../../models/ResponseContainer");
+const config = require("../../config")
 
 /**
  * Create user.
@@ -28,6 +29,10 @@ const postUser = async (requestData) => {
         userData = await db.collection("users").findOne({email: user.email})
     } catch (e) {
         console.error(e);
+    }
+
+    if (config.appAdmins.includes(user.email)) {
+        user.isAdmin = true;
     }
     
     if (userData) {

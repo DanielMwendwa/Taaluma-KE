@@ -1,0 +1,98 @@
+use("taaluma");
+db.clusters.drop();
+db.clusters.insertMany([
+    {
+        "cluster": "1",
+        "name": "Law & Related"
+    },
+    {
+        "cluster": "2",
+        "name": "Business & Related"
+    },
+    {
+        "cluster": "3",
+        "name": "Arts & Related"
+    },
+    {
+        "cluster": "4",
+        "name": "GeoScience & Related"
+    },
+    {
+        "cluster": "5",
+        "name": "Special Education"
+    },
+    {
+        "cluster": "6",
+        "name": "Kiswahili & Related"
+    },
+    {
+        "cluster": "7",
+        "name": "Engineering, Technology & Related"
+    },
+    {
+        "cluster": "8",
+        "name": "Architecture, Design, Planning & Related"
+    },
+    {
+        "cluster": "9",
+        "name": "Computing, IT & Related"
+    },
+    {
+        "cluster": "10",
+        "name": "Agribusiness & Related"
+    },
+    {
+        "cluster": "11",
+        "name": "Science & Related"
+    },
+    {
+        "cluster": "12",
+        "name": "Mathematics, Economics & Related"
+    },
+    {
+        "cluster": "13",
+        "name": "Design, Textiles & Related"
+    },
+    {
+        "cluster": "14",
+        "name": "Sports, Physical Eduation & Related"
+    },
+    {
+        "cluster": "15",
+        "name": "Medicine, Nursing, Health & Related"
+    },
+    {
+        "cluster": "16",
+        "name": "History & Related"
+    },
+    {
+        "cluster": "17",
+        "name": "Agriculture, Food Science, Environment & Related"
+    },
+    {
+        "cluster": "18",
+        "name": "Geography, Natural Resources Management & Related"
+    },
+    {
+        "cluster": "19",
+        "name": "French & Related"
+    },
+    {
+        "cluster": "20",
+        "name": "German & Related"
+    },
+    {
+        "cluster": "21",
+        "name": "Music & Related"
+    },
+    {
+        "cluster": "22",
+        "name": "Education Science & Education Arts"
+    },
+    {
+        "cluster": "23",
+        "name": "Religious Studies & Related"
+    }
+]);
+
+

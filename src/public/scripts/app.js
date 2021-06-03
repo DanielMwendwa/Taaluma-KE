@@ -29,11 +29,35 @@ app.setLoggedInClass = (isLoggedIn) => {
     }
 };
 
+// Set (or remove) the admin class from the body.
+app.setAdminClass = (isAdmin) => {
+    const targets = document.querySelectorAll(".appAdmin");
+    targets.forEach((target) => {
+        if (isAdmin) {
+            target.style.display = "block";
+        } else {
+            target.style.display = "none";
+        }
+    });
+};
+
+// Verify whether the signed in user is an administrator.
+app.verifyUserIsAdmin = (token) => {
+    const queryStringObject = { email: token.email };
+    httpClient
+        .request({ headers: { token: token._id }, path: "/api/users", method: "GET", queryStringObject })
+        .then(({ statusCode, responsePayload }) => {
+            app.setAdminClass(responsePayload.isAdmin);
+        });
+};
+
 // Init (bootstrapping).
 app.init = () => {
     // Get the token.
     const token = auth.getToken();
     app.setLoggedInClass(!!token);
+    app.verifyUserIsAdmin(token);
+
     if (token) {
         // Set token to the http client default headers.
         httpClient.defaults.headers = { token: token.id };

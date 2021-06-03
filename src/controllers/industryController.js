@@ -3,7 +3,7 @@
  */
 
 // Dependencies.
-const getIndustries = require("../actions/industry/getIndustries");
+const getIndustries = require("../actions/industry/getIndustry");
 const ResponseContainer = require("../models/ResponseContainer");
 
 /**
@@ -11,7 +11,7 @@ const ResponseContainer = require("../models/ResponseContainer");
  * @param {RequestData} requestData
  * @return {Promise}
  */
-industriesController = async (requestData) => {
+industryController = async (requestData) => {
     switch (requestData.method) {
         case "get":
             return await getIndustries(requestData);
@@ -22,4 +22,4 @@ industriesController = async (requestData) => {
 };
 
 // Export the module.
-module.exports = industriesController;
+module.exports = industryController;
