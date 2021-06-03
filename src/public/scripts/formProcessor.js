@@ -24,12 +24,12 @@ formProcessor.bindForms = (httpClient) => {
             let method = form.method.toUpperCase();
 
             // Hide the error message (if it's currently shown due to a previous error).
-            // document.querySelector(`#${formId} .error`).style.display = "none";
+            document.querySelector(`#${formId} .formError`).style.display = "none";
 
             // Hide the success message (if it's currently shown due to a previous error).
-            // if (document.querySelector(`#${formId} .formSuccess`)) {
-            //     document.querySelector(`#${formId} .formSuccess`).style.display = "none";
-            // }
+            if (document.querySelector(`#${formId} .formSuccess`)) {
+                document.querySelector(`#${formId} .formSuccess`).style.display = "none";
+            }
 
             // Turn the inputs into a payload.
             const payload = {};
@@ -68,8 +68,8 @@ formProcessor.bindForms = (httpClient) => {
                                 : "An error has occured, please try again";
 
                         // Set the formError field with the error text.
-                        // document.querySelector(`#${formId} .formError`).innerHTML = error;
-                        // document.querySelector(`#${formId} .formError`).style.display = "block";
+                        document.querySelector(`#${formId} .formError`).innerHTML = error;
+                        document.querySelector(`#${formId} .formError`).style.display = "block";
                 }
             });
         });
