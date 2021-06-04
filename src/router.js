@@ -68,6 +68,11 @@ router.routes = {
         data: { "head.title": "Login" },
     },
 
+    "user/dashboard": {
+        controller: templateController,
+        data: { "head.title": "Dashboard"}
+    },
+
     "industries": {
         controller: templateController,
         data: { "head.title": "Industry List" },
