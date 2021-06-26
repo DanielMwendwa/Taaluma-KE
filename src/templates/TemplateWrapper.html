@@ -19,6 +19,7 @@
         <script type="text/javascript" charset="UTF-8" src="/public/scripts/app.js"></script>
     </head>
     <body>
+        <div class="backdrop"></div>
         <header class="main-header">
             <div>
                 <button class="toggle-button">
@@ -27,7 +28,7 @@
                     <span class="toggle-button__bar"></span>
                 </button>
                 <a href="/" class="main-header__brand">
-                    <img src="/public/images/uhost-icon.png" alt="uHost - Your favorite hosting company" />
+                    <img src="/public/images/logo.png" alt="Taaluma Kenya - Your favorite Career Guidance website" />
                 </a>
             </div>
             <nav class="main-nav">
@@ -36,25 +37,16 @@
                         <a href="/">Home</a>
                     </li>
                     <li class="main-nav__item loggedIn">
-                        <a href="/industries">Industries</a>
+                        <a href="/user/dashboard">Dashboard</a>
                     </li>
-                    <li class="main-nav__item loggedIn">
-                        <a href="/clusters">Clusters</a>
-                    </li>
-                    <li class="main-nav__item loggedIn">
+                    <li class="main-nav__item">
                         <a href="/faq">FAQ</a>
                     </li>
-                    <li class="main-nav__item loggedIn appAdmin">
-                        <a href="#">Student Portal</a>
-                    </li>
-                    <li class="main-nav__item loggedIn appAdmin">
-                        <a href="/">Admin</a>
+                    <li class="main-nav__item loggedIn appAdmi">
+                        <a href="/admin/dashboard">Admin</a>
                     </li>
                     <li class="main-nav__item loggedIn">
                         <a href="/user/account/edit">Profile</a>
-                        <!-- <a href="customers/index.html">Profile</a> -->
-                        <!-- <a href="/user/account/edit"> -->
-                        <!-- <img src="/public/images/av1.png" alt="Avatar" class="avatar"> </a> -->
                     </li>
                     <li class="main-nav__item main-nav__item--cta loggedOut">
                         <a href="/user/account/create">Sign Up</a>
@@ -71,13 +63,13 @@
         <nav class="mobile-nav">
             <ul class="mobile-nav__items">
                 <li class="mobile-nav__item">
-                    <a href="packages/index.html">Packages</a>
+                    <a href="/">Home</a>
                 </li>
                 <li class="mobile-nav__item">
-                    <a href="customers/index.html">Customers</a>
+                    <a href="/user/dashboard">Dashboard</a>
                 </li>
                 <li class="mobile-nav__item mobile-nav__item--cta">
-                    <a href="start-hosting/index.html">Start Hosting</a>
+                    <a href="/user/account/create">Sign Up</a>
                 </li>
             </ul>
         </nav>
@@ -87,33 +79,33 @@
             <div class="social-panel">
                 <p>
                     Created with <i class="fa fa-heart"></i> by
-                    <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+                    <a target="_blank" href="https://facebook.com/">Daniel Mwendwa</a>
                 </p>
                 <button class="close-btn"><i class="fas fa-times"></i></button>
                 <h4>Get in touch on</h4>
                 <ul>
                     <li>
-                        <a href="https://www.patreon.com/florinpop17" target="_blank">
+                        <a href="https://www.patreon.com/" target="_blank">
                             <i class="fab fa-discord"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://twitter.com/florinpop1705" target="_blank">
+                        <a href="https://twitter.com/" target="_blank">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://linkedin.com/in/florinpop17" target="_blank">
+                        <a href="https://linkedin.com/in/" target="_blank">
                             <i class="fab fa-linkedin"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://facebook.com/florinpop17" target="_blank">
+                        <a href="https://facebook.com/" target="_blank">
                             <i class="fab fa-facebook"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://instagram.com/florinpop17" target="_blank">
+                        <a href="https://instagram.com/" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </li>
@@ -133,6 +125,7 @@
                 </ul>
             </nav>
         </footer>
-        <script src="/public/scripts/getInTouch.js"></script>
+        <script src="/public/utils/getInTouch.js"></script>
+        <script src="/public/utils/sideNavigationBar.js"></script>
     </body>
 </html>

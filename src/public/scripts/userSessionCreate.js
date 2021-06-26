@@ -1,12 +1,12 @@
 // Init page module object.
 const userSessionCreate = {};
+const accountRecovery = {};
 
 // Callback that is being called once userAccountEdit is successfully submit.
 userSessionCreate.formSuccessProcessor = ({ detail: { formId, requestPayload, responsePayload } }) => {
     // If forms saved successfully and they have success messages, show them.
     auth.setToken(responsePayload);
-    // window.location = "/user/dashboard";
-    window.location = "/industries";
+    window.location = "/user/dashboard";
 };
 
 accountRecovery.formSuccessProcessor = ({ detail: { formId, requestPayload, responsePayload } }) => {

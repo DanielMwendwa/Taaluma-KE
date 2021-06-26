@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+.main-industry,
+.main-cluster {
+    background: #efefbb;
+    background: -webkit-linear-gradient(to right, #d4d3dd, #efefbb);
+    background: linear-gradient(to right, #d4d3dd, #efefbb);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Lato";
+    margin: 0;
+    padding-bottom: 50px;
+    margin-bottom: -50px;
+}
+
+.main-industry h1,
+.main-cluster h1 {
+    letter-spacing: 3px;
+}
+
+.industries-container,
+.clusters-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-between;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.industry,
+.cluster {
+    background-color: #eee;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.cluster .img-container,
+.industry .img-container {
+    width: 200px;
+    height: 125px;
+    text-align: center;
+}
+
+.cluster .img-container img,
+.industry .img-container img {
+    border-radius: 50%;
+    max-width: 90%;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+}
+
+.cluster .info,
+.industry .info {
+    margin-top: 20px;
+}
+
+.cluster .number,
+.industry .number {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-size: 0.8em;
+    padding: 5px 10px;
+}
+
+.cluster .name,
+.industry .name {
+    margin: 15px 0 7px;
+    letter-spacing: 1px;
+    word-wrap: break-word;
+    width: 200px;
+}
+
+.cluster,
+.industry {
+    position: relative;
+}
+
+.cluster a.main,
+.industry a.main {
+    color: black;
+    text-decoration: none;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.cluster a.main::after,
+.industry a.main::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: " ";
+}

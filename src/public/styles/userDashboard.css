@@ -1,0 +1,109 @@
+#user-dashboard {
+    /* background-color: #000; */
+    background: #efefbb;
+    background: -webkit-linear-gradient(to right, #d4d3dd, #efefbb);
+    background: linear-gradient(to right, #d4d3dd, #efefbb);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding-right: 1rem;
+    min-height: 100vh;
+    margin-bottom: -47px;
+}
+.dashboard-details a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.dashboard-details {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 90vh;
+}
+
+.aside-img {
+    width: 40%;
+    height: 90vh;
+}
+
+.aside-img img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.box {
+    background-color: #404040;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.box:not(:last-of-type) {
+    margin-bottom: 1.5rem;
+}
+
+.dark-box {
+    background-color: #202020;
+    margin-bottom: auto;
+}
+
+.logo {
+    background-color: #fff;
+    border-radius: 35px;
+    color: black;
+    display: inline-flex;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 80px;
+    margin-right: 1rem;
+}
+
+.user-dashboaard-header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.dashboard-details h2 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 0;
+}
+
+.user-dashboaard-header h3 {
+    color: #6f6f6f;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.dashboard-details p {
+    margin: 0;
+}
+
+.box .text {
+    width: 300px;
+}
+
+.fa-chevron-right {
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding-right: 0;
+    }
+
+    .aside-img,
+    main {
+        height: auto;
+        width: 100%;
+    }
+}

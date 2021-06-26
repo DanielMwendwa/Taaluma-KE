@@ -5,6 +5,7 @@
     bottom: 80px;
     transform: translateX(100%);
     transition: transform 0.4s ease-in-out;
+    z-index: 102;
 }
 
 .social-panel-container.visible {
@@ -14,8 +15,8 @@
 .social-panel {
     background-color: #fff;
     border-radius: 16px;
-    box-shadow: 0 16px 31px -17px rgba(0, 31, 97, 0.6);
-    border: 5px solid #001f61;
+    box-shadow: 0 16px 31px -17px #e75480;
+    border: 5px solid #e75480;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,7 +30,7 @@
 
 .social-panel button.close-btn {
     border: 0;
-    color: #97a5ce;
+    color: #d1a4b3;
     cursor: pointer;
     font-size: 20px;
     position: absolute;
@@ -42,7 +43,7 @@
 }
 
 .social-panel p {
-    background-color: #001f61;
+    background-color: #e75480;
     border-radius: 0 0 10px 10px;
     color: #fff;
     font-size: 14px;
@@ -62,13 +63,13 @@
 }
 
 .social-panel p a {
-    color: #ff7500;
+    color: #4f3d40;
     text-decoration: none;
 }
 
 .social-panel h4 {
     margin: 20px 0;
-    color: #97a5ce;
+    color:#292223;
     font-family: "Muli";
     font-size: 14px;
     line-height: 18px;
@@ -106,8 +107,8 @@
 
 .floating-btn {
     border-radius: 26.5px;
-    background-color: #001f61;
-    border: 1px solid #001f61;
+    background-color: #ff1b68;;
+    border: 1px solid #ff1b68;;
     box-shadow: 0 16px 22px -17px #03153b;
     color: #fff;
     cursor: pointer;
@@ -122,7 +123,7 @@
 
 .floating-btn:hover {
     background-color: #ffffff;
-    color: #001f61;
+    color: #ff1b68;
 }
 
 .floating-btn:focus {

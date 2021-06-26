@@ -2,6 +2,7 @@
 const connection = require("../../db");
 const ResponseContainer = require("../../models/ResponseContainer");
 const randomInteger = require("../../lib/randomInteger");
+const mailgun = require("../../lib/mailgun");
 
 /**
  * Create user.
@@ -23,6 +24,12 @@ const postUser = async (requestData) => {
     }
 
     const code = randomInteger();
+    try {
+        await mailgun.sendEmail(email, "Taaluma", code);
+    } catch (error) {
+        console.log(error)
+    }
+
     const emailAndCode = {email, code}
     const query = { email };
     const update = { $set: { ...emailAndCode, "createdAt": new Date() }};
