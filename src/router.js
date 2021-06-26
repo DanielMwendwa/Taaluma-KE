@@ -8,6 +8,7 @@ const notFoundController = require("./controllers/notFoundController");
 const tokenController = require("./controllers/tokenController");
 const userController = require("./controllers/userController");
 const accountRecoveryController = require("./controllers/accountRecoveryController")
+const clustersController = require("./controllers/clustersController");
 const industriesController = require("./controllers/industriesController");
 const industryController = require("./controllers/industryController");
 const templateController = require("./controllers/templateController");
@@ -31,8 +32,16 @@ router.routes = {
         controller: accountRecoveryController,
     },
 
+    "api/contact-us": {
+        // controller: contactUsController,
+    },
+
     "api/tokens": {
         controller: tokenController,
+    },
+
+    "api/clusters": {
+        controller: clustersController,
     },
 
     "api/industries": {
@@ -69,6 +78,11 @@ router.routes = {
     },
 
     "user/dashboard": {
+        controller: templateController,
+        data: { "head.title": "Dashboard"}
+    },
+
+    "admin/dashboard": {
         controller: templateController,
         data: { "head.title": "Dashboard"}
     },
