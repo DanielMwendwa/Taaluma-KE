@@ -20,11 +20,8 @@ userAccountEdit.preloadData = () => {
             console.log(statusCode)
             if (statusCode === 200) {
                 // Put the data into the forms as values where needed
-                // document.querySelector("#userAccountEdit input[name=email]").value = responsePayload.email;
-                // document.querySelector("#userAccountEdit input[name=name]").value = responsePayload.name;
-                // document.querySelector("#userAccountEdit input[name=address]").value = responsePayload.address;
-                // document.querySelector("#userAccountEdit input[name=streetAddress]").value =
-                    // responsePayload.streetAddress;
+                document.querySelector("#userAccountEdit input[name=email]").value = responsePayload.email;
+                document.querySelector("#userAccountEdit input[name=name]").value = responsePayload.name;
             } else {
                 // If the request comes back as something other than 200, log the user our.
                 auth.logUserOut(httpClient).then(() => {
