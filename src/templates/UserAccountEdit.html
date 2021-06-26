@@ -6,6 +6,8 @@
         </div>
         <form class="form" id="userAccountEdit" action="/api/users" method="PUT">
             <input type="hidden" name="_method" value="PUT" />
+            <div class="formError"></div>
+            <div class="formSuccess"></div>
             <div class="form-control">
                 <label for="username">Username</label>
                 <input type="text" name="name" id="username" />
@@ -15,7 +17,7 @@
             </div>
             <div class="form-control">
                 <label for="username">Email</label>
-                <input type="email" name="email" id="email" />
+                <input type="email" name="email" id="email" disabled/>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>

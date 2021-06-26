@@ -34,7 +34,8 @@ userAccountEdit.preloadData = () => {
 // Callback that is being called once userAccountEdit is successfully submit.
 userAccountEdit.formSuccessProcessor = ({ detail: { formId, requestPayload, responsePayload } }) => {
     // If forms saved successfully and they have success messages, show them.
-    // document.querySelector("#userAccountEdit .formSuccess").style.display = "block";
+    document.querySelector("#userAccountEdit .formSuccess").style.display = "block";
+    document.querySelector(`#${formId} .formSuccess`).innerHTML = "Updated details successfully";
 };
 
 // Init user current page.
@@ -43,7 +44,7 @@ userAccountEdit.init = () => {
     userAccountEdit.preloadData();
 
     // Subscribe to form events.
-    // document.addEventListener("userAccountEditFormSuccess", userAccountEdit.formSuccessProcessor);
+    document.addEventListener("userAccountEditFormSuccess", userAccountEdit.formSuccessProcessor);
 };
 
 // Call the init processes after the window loads
