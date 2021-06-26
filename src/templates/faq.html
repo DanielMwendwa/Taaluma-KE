@@ -1,172 +1,67 @@
-<h1>Frequently Asked Questions</h1>
-
-<div class="faqs-container">
-    <div class="faq active">
-        <h3 class="faq-title">Why shouldn't we trust atoms?</h3>
-        <p class="faq-text">They make up everything.</p>
-        <button class="faq-toggle">
-            <i class="fas fa-chevron-down"></i>
-            <i class="fas fa-times"></i>
-        </button>
+<link rel="stylesheet" href="/public/styles/faq.css" />
+<section>
+    <h1>Frequently Asked Questions</h1>
+    <div class="faqs-container">
+        <div class="faq active">
+            <h3 class="faq-title">How is my personal data handled?</h3>
+            <p class="faq-text">
+                We firmly believe that you own your data, not us. We never sell your personal data to third parties and
+                we use industry-standard best practices, making sure your private information is always encrypted and
+                secure. We are also happy to delete your data upon request.
+            </p>
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="faq">
+            <h3 class="faq-title">How can I change my password?</h3>
+            <p class="faq-text">
+                You can change your password at any time by following these steps: <br />
+                1. login using your current email address <br />
+                2. click “My Account” in the top right <br />
+                3. select Settings from the dropdown <br />
+                4. select “Change your account login” <br />
+                5. enter your current password <br />
+                6. enter your new password and then reenter your new password to confirm <br />
+                7. select “save” <br />
+                Just remember: the next time you log into the website, you'll want to use your new password to log in.
+            </p>
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="faq">
+            <h3 class="faq-title">How much does it cost?</h3>
+            <p class="faq-text">
+                We want to help everyone learn more about themselves and make informed career decisions, so we’ve made
+                the career guidance free. You’ll get your top career matches, insights, and report previews for free.
+            </p>
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="faq">
+            <h3 class="faq-title">Where can I report a broken link on Taaluma?</h3>
+            <p class="faq-text">
+                Please send a description of the broken link and its location, including the web address of the page it
+                is on, to info@taaluma.org.
+            </p>
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="faq">
+            <h3 class="faq-title">How can I advertise on Taaluma?</h3>
+            <p class="faq-text">Taaluma does not accept advertisements.</p>
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
     </div>
-
-    <div class="faq">
-        <h3 class="faq-title">What do you call someone with no body and no nose?</h3>
-        <p class="faq-text">Nobody knows.</p>
-        <button class="faq-toggle">
-            <i class="fas fa-chevron-down"></i>
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-
-    <div class="faq">
-        <h3 class="faq-title">What's the object-oriented way to become wealthy?</h3>
-        <p class="faq-text">Inheritance.</p>
-        <button class="faq-toggle">
-            <i class="fas fa-chevron-down"></i>
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-
-    <div class="faq">
-        <h3 class="faq-title">How many tickles does it take to tickle an octopus?</h3>
-        <p class="faq-text">Ten-tickles!</p>
-        <button class="faq-toggle">
-            <i class="fas fa-chevron-down"></i>
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-
-    <div class="faq">
-        <h3 class="faq-title">What is: 1 + 1?</h3>
-        <p class="faq-text">Depends on who are you asking.</p>
-        <button class="faq-toggle">
-            <i class="fas fa-chevron-down"></i>
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-</div>
-
-<style>
-    @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
-
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        background-color: #f0f0f0;
-        font-family: "Muli", sans-serif;
-    }
-
-    h1 {
-        margin: 50px 0 30px;
-        text-align: center;
-    }
-
-    .faqs-container {
-        margin: 0 auto;
-        max-width: 600px;
-    }
-
-    .faq {
-        background-color: transparent;
-        border: 1px solid #9fa4a8;
-        border-radius: 10px;
-        padding: 30px;
-        position: relative;
-        overflow: hidden;
-        margin: 20px 0;
-        transition: 0.3s ease;
-    }
-
-    .faq.active {
-        background-color: #fff;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .faq.active::after,
-    .faq.active::before {
-        color: #2ecc71;
-        content: "\f075";
-        font-family: "Font Awesome 5 Free";
-        font-size: 7rem;
-        position: absolute;
-        opacity: 0.2;
-        top: 20px;
-        left: 20px;
-        z-index: 0;
-    }
-
-    .faq.active::before {
-        color: #3498db;
-        top: -10px;
-        left: -30px;
-        transform: rotateY(180deg);
-    }
-
-    .faq-title {
-        margin: 0 35px 0 0;
-    }
-
-    .faq-text {
-        display: none;
-        margin: 30px 0 0;
-    }
-
-    .faq.active .faq-text {
-        display: block;
-    }
-
-    .faq-toggle {
-        background-color: transparent;
-        border: none;
-        border-radius: 50%;
-        color: #fff;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 16px;
-        padding: 0;
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        height: 30px;
-        width: 30px;
-    }
-
-    .faq-toggle:focus {
-        outline: none;
-    }
-
-    .faq.active .faq-toggle {
-        background-color: #9fa4a8;
-    }
-
-    .faq-toggle .fa-times {
-        display: none;
-    }
-
-    .faq.active .faq-toggle .fa-times {
-        display: block;
-    }
-
-    .faq-toggle .fa-chevron-down {
-        color: #83888e;
-    }
-
-    .faq.active .faq-toggle .fa-chevron-down {
-        display: none;
-    }
-</style>
-
-<script>
-    const toggles = document.querySelectorAll(".faq-toggle");
-
-    toggles.forEach((toggle) => {
-        toggle.addEventListener("click", () => {
-            toggle.parentNode.classList.toggle("active");
-        });
-    });
-</script>
+</section>
+<script src="/public/utils/faq.js"></script>
