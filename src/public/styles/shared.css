@@ -260,3 +260,42 @@ body.loggedOut a.loggedOut {
 li.appAdmin {
     display: none;
 }
+
+.formInfo,
+.formSuccess,
+.formWarning,
+.formError,
+.formValidation {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding: 15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    display: none;
+}
+.formInfo {
+    color: #00529b;
+    background-color: #bde5f8;
+    background-image: url("https://i.imgur.com/ilgqWuX.png");
+}
+.formSuccess {
+    color: #4f8a10;
+    background-color: #dff2bf;
+    background-image: url("https://i.imgur.com/Q9BGTuy.png");
+}
+.formWarning {
+    color: #9f6000;
+    background-color: #feefb3;
+    background-image: url("https://i.imgur.com/Z8q7ww7.png");
+}
+.formError {
+    color: #d8000c;
+    background-color: #ffbaba;
+    background-image: url("https://i.imgur.com/GnyDvKN.png");
+}
+.formValidation {
+    color: #d63301;
+    background-color: #ffccba;
+    background-image: url("https://i.imgur.com/GnyDvKN.png");
+}
+
