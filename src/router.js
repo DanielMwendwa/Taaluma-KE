@@ -9,6 +9,7 @@ const tokenController = require("./controllers/tokenController");
 const userController = require("./controllers/userController");
 const accountRecoveryController = require("./controllers/accountRecoveryController")
 const clustersController = require("./controllers/clustersController");
+const clusterController = require("./controllers/clusterController");
 const industriesController = require("./controllers/industriesController");
 const industryController = require("./controllers/industryController");
 const templateController = require("./controllers/templateController");
@@ -105,6 +106,11 @@ router.routes = {
     "clusters": {
         controller: templateController,
         data: { "head.title": "Clusters"}
+    },
+
+    "cluster": {
+        controller: templateController,
+        data: { "head.title": "Cluster"}
     },
 
     "account/recovery": {

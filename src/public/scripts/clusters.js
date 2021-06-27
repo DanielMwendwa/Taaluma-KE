@@ -54,7 +54,7 @@ clusters.preloadData = () => {
                 card.addEventListener("click", (event) => {
                     if (event.target) {
                         console.log(event.target.id);
-                        window.location = `/industry?cluster=${event.target.id}`;
+                        window.location = `/cluster?cluster=${event.target.id}`;
                     }
                 });
             });

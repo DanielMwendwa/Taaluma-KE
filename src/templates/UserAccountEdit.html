@@ -17,14 +17,14 @@
             </div>
             <div class="form-control">
                 <label for="username">Email</label>
-                <input type="email" name="email" id="email" disabled/>
+                <input type="email" name="email" id="email" disabled />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
             </div>
             <div class="form-control">
                 <label for="username">Index Number</label>
-                <input type="number" id="index-number" />
+                <input type="number" name="indexNumber" id="index-number" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
@@ -33,60 +33,81 @@
         </form>
     </div>
 
-    <div style="align-self: flex-start; margin-left: 40px">
+    <div class="profile-img-section">
         <p>Update Profile Picture</p>
-        <div id="app"></div>
-        <input type="file" id="fileInput" multiple name="file" hidde />
-        <div class="uploader" id="fileSelect">
-            <div id="content" class="content">
-                <p id="content-action">Upload Images</p>
+        <div class="file-form" enctype="multipart/form-data" action="http://localhost:8000/upload" method="post">
+            <div class="file-input">
+                <input type="file" name="myFile" id="file" hidden />
+                <label class="profile-img-label" for="file" id="selector">Select file</label>
             </div>
+            <input class="upload-img" type="submit" value="upload" />
         </div>
-        <div id="oit" class="other-image-thumbnails"></div>
     </div>
 </div>
 <style>
-    .uploader {
-        border: black dotted;
-        box-sizing: content-box;
-        width: 300px;
-        height: 300px;
-        cursor: pointer;
+    .profile-img-section {
+        align-self: flex-start;
+        margin-left: 40px;
+    }
+    .file-form {
         display: flex;
-    }
-    .uploader {
-        margin: auto;
-    }
-    .uploader p {
-        margin: auto;
-    }
-    .content {
-        width: 100%;
-        height: 100%;
-        display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
     }
-    .uploaded-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    .file-input {
+        margin-bottom: 30px;
     }
-    .other-image-thumbnails {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+    .profile-img-label {
+        padding: 16px 48px;
+        border: 3px solid #ff1b68;
+        border-radius: 48px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+        color: #ff1b68;
     }
 
-    .img-thumb {
-        width: 140px;
-        height: 120px;
-        border: 1px solid purple;
-        object-fit: cover;
-        flex: 1;
+    .profile-img-label:hover {
+        transform: scale(1.04);
     }
-</style>
 
-<style>
+    .profile-img-label.active {
+        background-color: #ff1b68;
+        color: #242424;
+    }
+
+    .profile-img-label span {
+        font-weight: normal;
+    }
+
+    .profile-img-label.image {
+        width: 200px;
+        height: 200px;
+        padding: 0px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .profile-img-label.image img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .upload-img {
+        border-radius: 0.5px;
+        background-color: #ff1b68;
+        border: 1px solid #ff1b68;
+        box-shadow: 0 16px 22px -17px #03153b;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 20px;
+        padding: 12px 20px;
+        width: 200px;
+    }
+
     * {
         box-sizing: border-box;
     }
