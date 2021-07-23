@@ -24,6 +24,27 @@ const getIndustries = async (requestData) => {
         console.error(e);
     }
 
+    // let career_data;
+    // try {
+    //     career_data = await db.collection("career_data").find();
+    // } catch (e) {
+    //     console.error(e);
+    // }
+    // console.log(career_data)
+
+    let career_data;
+    let projection = { _id: 0 };
+    try {
+        cursor = await db.collection("career_data").find().project(projection);
+        career_data = await cursor.toArray();
+    } catch (e) {
+        console.error(e);
+    }
+
+    industry.careers.forEach((doc) => {
+        doc.desc = career_data.find((x) => x.Code === doc.code).Description;
+    });
+
     return new ResponseContainer(200, industry);
 };
 

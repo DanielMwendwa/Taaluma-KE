@@ -1,0 +1,169 @@
+<section>
+    <div class="profile-page">
+        <div class="container" style="align-self: flex-start; margin-top: 20px">
+            <div class="header">
+                <h2>Uploading school results</h2>
+            </div>
+            <div class="popup">
+                <p>Follow the format below for entering student results</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Year</td>
+                            <td>Index No.</td>
+                            <td>Grade</td>
+                            <td>English</td>
+                            <td>Kiswahili</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>2016</td>
+                            <td>103454545</td>
+                            <td>A</td>
+                            <td>B+</td>
+                            <td>A</td>
+                            <td>...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="upload-sect">
+        <input type="file" id="fileUpload" class="upload-box" />
+        <input class="upload-btn" type="button" id="upload" value="upload" onclick="upload()" />
+    </div>
+    <div id="dvCSV"></div>
+</section>
+
+<style>
+    table {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        border-spacing: 0;
+        width: 100%;
+    }
+
+    table tr th {
+        background-color: #f1f5f8;
+        border-bottom: 2px solid #ccc;
+        font-size: 12px;
+        padding: 10px;
+        text-transform: uppercase;
+        text-align: left;
+    }
+
+    table tr {
+        border-bottom: 1px solid #ccc;
+    }
+
+    table tr td {
+        background-color: #fff;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    table tr:nth-of-type(odd) td {
+        background-color: #f9f9f9;
+    }
+
+    table tr:last-of-type td {
+        border-bottom: 0;
+    }
+
+    table tr td:nth-of-type(1),
+    table tr td:nth-of-type(2) {
+        font-weight: bold;
+    }
+
+    table tr th:nth-of-type(5),
+    table tr td:nth-of-type(5) {
+        text-align: center;
+    }
+
+    .upload-sect,
+    #dvCSV {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .upload-box {
+        font-size: 16px;
+        background: white;
+        border-radius: 2px;
+        box-shadow: 5px 5px 10px black;
+        width: 350px;
+        padding: 11px 20px;
+        outline: none;
+    }
+
+    .upload-btn {
+        border-radius: 2.5px;
+        background-color: #ff1b68;
+        border: 1px solid #ff1b68;
+        box-shadow: 5px 5px 10px black;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 20px;
+        padding: 12px 20px;
+    }
+
+    .upload-btn:hover {
+        background-color: #ffffff;
+        color: #ff1b68;
+    }
+
+    .upload-btn:focus {
+        outline: none;
+    }
+
+    .popup {
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 5px 30px;
+        text-align: center;
+        max-width: 500px;
+        margin-right: 5px;
+    }
+
+    .popup p {
+        color: #555;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+    .profile-page {
+        font-family: "Open Sans", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+    .container {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        width: 500px;
+        max-width: 100%;
+    }
+
+    .header {
+        border-bottom: 1px solid #f0f0f0;
+        background-color: #f7f7f7;
+        padding: 20px 40px;
+    }
+
+    .header h2 {
+        margin: 0;
+    }
+</style>
+
+<!-- Load page specific JavaScript -->
+<script src="/public/scripts/userAccountEdit.js"></script>
+<script src="/public/utils/uploadCsv.js"></script>

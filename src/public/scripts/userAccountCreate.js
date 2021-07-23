@@ -1,5 +1,6 @@
 // Init page module object.
 const userAccountCreate = {};
+const schoolUserAccountCreate = {};
 
 // Callback that is being called once userAccountCreate is successfully submit.
 userAccountCreate.formSuccessProcessor = ({ detail: { formId, requestPayload, responsePayload } }) => {
@@ -22,15 +23,24 @@ userAccountCreate.formSuccessProcessor = ({ detail: { formId, requestPayload, re
             } else {
                 // If successful, set the token and redirect the user.
                 auth.setToken(newResponsePayload);
-                window.location = "/industries";
+                window.location = "/user/dashboard";
             }
         });
+};
+
+schoolUserAccountCreate.formSuccessProcessor = ({ detail: { formId, requestPayload, responsePayload } }) => {
+    console.log(formId)
+    // If forms saved successfully and they have success messages, show them.
+    // Take the email and password, and use it to log the user in
+    document.querySelector(`#${formId} .formSuccess`).innerHTML = "You will get an email telling you if your request is approved";
+    document.querySelector(`#${formId} .formSuccess`).style.display = "block";
 };
 
 // Init user current page.
 userAccountCreate.init = () => {
     // Subscribe to form events.
     document.addEventListener("userAccountCreateFormSuccess", userAccountCreate.formSuccessProcessor);
+    document.addEventListener("userSchoolAccountCreateFormSuccess", schoolUserAccountCreate.formSuccessProcessor);
 };
 
 // Call the init processes after the window loads

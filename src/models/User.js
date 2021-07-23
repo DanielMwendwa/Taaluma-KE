@@ -81,7 +81,8 @@ class User {
     updateFromObject({ name, password, indexNumber }) {
         const parsedName = validator.parseString(name);
         const parsedHashedPassword = passwordHash(validator.parseString(password));
-        const parsedIndexNumber = validator.parsePositiveInteger(indexNumber);
+        const parsedIndexNumber = validator.parsePositiveInteger(parseInt(indexNumber));
+        console.log(parsedIndexNumber)
 
         if (parsedName) {
             this.name = parsedName;

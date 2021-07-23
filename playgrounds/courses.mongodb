@@ -1,0 +1,301 @@
+use("taaluma");
+db.courses.drop();
+db.courses.insertMany([
+    {
+        "cluster": "1",
+        "name": "BACHELOR OF LAW",
+        "min_req": {
+            "1": {
+                "grade": "B",
+                "subjects": ["ENG", "KIS"]
+            }
+        }
+    },
+    {
+        "cluster": "2",
+        "name": "BACHELOR OF COMMERCE",
+        "min_req": {
+            "1": {
+                "grade": "C",
+                "subjects": ["MAT A", "MAT B"]
+            }
+        }
+    },
+    {
+        "cluster": "3",
+        "name": "BACHELOR OF ARTS",
+        "min_req": null,
+    },
+    {
+        "cluster": "4",
+        "name": "BACHELOR OF SCIENCE (METEOROLOGY)",
+        "min_req": {
+            "1": {
+                "grade": "C+",
+                "subjects": ["MAT A"]
+            },
+            "2": {
+                "grade": "C+",
+                "subjects": ["PHY"]
+            },
+            "3": {
+                "grade": "C",
+                "subjects": ["CHE", "GEO"]
+            }
+        }
+    },
+    {
+        "cluster": "5",
+        "name": "BACHELOR OF EDUCATION (SPECIAL NEEDS EDUCATION, WITH IT)",
+        "min_req": {
+            "1": {
+                "grade": "C",
+                "subjects": ["ENG", "KIS"]
+            },
+            "2": {
+                "grade": "C+",
+                "subjects": ["BIO", "GSC"]
+            },
+            "3": {
+                "grade": "C+",
+                "subjects": ["MAT A", "MAT B", "PHY", "CHE", "PSC", "BSC", "BIO", "GEO"]
+            }
+        }
+    },
+
+    {
+        "cluster": "6",
+        "name": "BACHELOR OF ARTS (KISWAHILI, WITH IT)",
+        "min_req": {
+            "1": {
+                "grade": "C+",
+                "subjects": ["KIS"]
+            }
+        }
+    },
+
+    {
+        "cluster": "7",
+        "name": "BACHELOR OF SCIENCE (INDUSTRIAL CHEMISTRY, WITH IT)",
+        "min_req": {
+            "1": {
+                "grade": "C",
+                "subjects": ["MAT A"]
+            },
+            "2": {
+                "grade": "C",
+                "subjects": ["PHY"]
+            },
+            "3": {
+                "grade": "C+",
+                "subjects": ["CHE"]
+            }
+        }
+    },
+
+    {
+        "cluster": "8",
+        "name": "BACHELOR OF TECHNICAL EDUCATION (BUILDING CONSTRUCTION OPTION, MECHANICAL ENGINEERING OPTION, ELECTRICAL AND ELECTRONIC OPTION)",
+        "min_req": {
+            "1": {
+                "grade": "C+",
+                "subjects": ["MAT A"]
+            },
+            "2": {
+                "grade": "C+",
+                "subjects": ["PHY"]
+            }
+        }
+    },
+
+    {
+        "cluster": "9",
+        "name": "BACHELOR OF SCIENCE (COMPUTER SCIENCE)",
+        "min_req": {
+            "1": {
+                "grade": "C+",
+                "subjects": ["MAT A"]
+            },
+            "2": {
+                "grade": "C+",
+                "subjects": ["PHY"]
+            }
+        }
+    },
+
+    {
+        "cluster": "10",
+        "name": "BACHELOR OF SCIENCE (AGRI BUSINESS MANAGEMENT)",
+        "min_req": {
+            "1": {
+                "grade": "C+",
+                "subjects": ["MAT A"]
+            },
+            "2": {
+                "grade": "C+",
+                "subjects": ["BIO"]
+            }
+        }
+    },
+
+    {
+        "cluster": "11",
+        "name": "BACHELOR OF SCIENCE (BIOLOGY)",
+        "min_req": {
+            "1": {
+                "grade": "C",
+                "subjects": ["MAT A"]
+            },
+            "2": {
+                "grade": "C+",
+                "subjects": ["BIO"]
+            },
+            "3": {
+                "grade": "C",
+                "subjects": ["CHE"]
+            }
+        }
+    },
+
+    {
+        "cluster": "12",
+        "name": "BACHELOR OF ACTUARIAL SCIENCE",
+        "min_req": {
+            "1": {
+                "grade": "C+",
+                "subjects": ["MAT A"]
+            }
+        }
+    },
+
+    {
+        "cluster": "13",
+        "name": "BACHELOR OF SCIENCE (FASHION DESIGN AND TEXTILE TECHNOLOGY)",
+        "min_req": {
+            "1": {
+                "grade": "C",
+                "subjects": ["CHE"]
+            }
+        }
+    },
+
+    {
+        "cluster": "14",
+        "name": "BACHELOR OF SCIENCE (EXERCISE & SPORT SCIENCE)",
+        "min_req": {
+            "1": {
+                "grade": "C",
+                "subjects": ["BIO"]
+            },
+            "2": {
+                "grade": "C",
+                "subjects": ["GSC"]
+            }
+        }
+    },
+
+    {
+        "cluster": "15",
+        "name": "BACHELOR OF SCIENCE (ENVIRONMENTAL HEALTH)",
+        "min_req": {
+            "1": {
+                "grade": "C+",
+                "subjects": ["BIO"]
+            },
+            "2": {
+                "grade": "C+",
+                "subjects": ["CHE"]
+            },
+            "3": {
+                "grade": "C+",
+                "subjects": ["MAT A", "PHY"]
+            },
+            "4": {
+                "grade": "C+",
+                "subjects": ["ENG", "KIS"]
+            }
+        }
+    },
+
+    {
+        "cluster": "17",
+        "name": "BACHELOR OF SCIENCE (AGRICULTURE)",
+        "min_req": {
+            "1": {
+                "grade": "C+",
+                "subjects": ["BIO"]
+            },
+            "2": {
+                "grade": "C+",
+                "subjects": ["CHE"]
+            }
+        }
+    },
+
+    {
+        "cluster": "19",
+        "name": "BACHELOR OF ARTS (FRENCH)",
+        "min_req": {
+            "1": {
+                "grade": "C+",
+                "subjects": ["FRE"]
+            }
+        }
+    },
+
+    {
+        "cluster": "20",
+        "name": "BACHELOR OF ARTS (GERMAN)",
+        "min_req": {
+            "1": {
+                "grade": "C+",
+                "subjects": ["GER"]
+            }
+        }
+    },
+
+    {
+        "cluster": "21",
+        "name": "BACHELOR OF MUSIC",
+        "min_req": {
+            "1": {
+                "grade": "C+",
+                "subjects": ["MUC"]
+            }
+        }
+    },
+
+    {
+        "cluster": "22",
+        "name": "BACHELOR OF EDUCATION (ARTS)",
+        "min_req": {
+            "1": {
+                "grade": "C",
+                "subjects": ["ENG"]
+            },
+            "2": {
+                "grade": "D+",
+                "subjects": ["MAT A", "MAT B"]
+            },
+            "3": {
+                "grade": "C+",
+                "subjects": ["HAG", "GEO", "CRE", "IRE", "HRE", "SEE"]
+            }
+        }
+    },
+
+    {
+        "cluster": "23",
+        "name": "BA in Biblical Studies",
+        "min_req": {
+            "1": {
+                "grade": "C+",
+                "subjects": ["CRE"]
+            },
+            "2": {
+                "grade": "C",
+                "subjects": ["ENG", "KIS"]
+            }
+        }
+    }
+])

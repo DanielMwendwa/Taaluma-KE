@@ -20,13 +20,13 @@ const putUser = async (requestData) => {
     }
 
     // Get the token from the headers.
-    const token = validator.parseString(requestData.headers.token);
+    // const token = validator.parseString(requestData.headers.token);
 
-    // Verify that the given token is valid for the phone number.
-    const verifiedToken = await verifyUserToken(token, email);
-    if (!verifiedToken) {
-        return new ResponseContainer(403, { error: "Missing required token in header or token is invalid" });
-    }
+    // // Verify that the given token is valid for the phone number.
+    // const verifiedToken = await verifyUserToken(token, email);
+    // if (!verifiedToken) {
+    //     return new ResponseContainer(403, { error: "Missing required token in header or token is invalid" });
+    // }
 
     // Lookup the user.
     let userData;

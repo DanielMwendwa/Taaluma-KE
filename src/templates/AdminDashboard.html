@@ -5,44 +5,38 @@
             <ul>
                 <li>
                     <a href="#">
-                        <span class="icon"><i class="fab fa-apple"></i></span>
-                        <span class="title"><h2>Brand Name</h2></span>
+                        <span class="icon"><i class="fas fa-users-cog"></i></span>
+                        <span class="title"><h2>Admin</h2></span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span class="icon"><i class="fab fa-apple"></i></span>
+                    <a href="/admin/dashboard">
+                        <span class="icon"><i class="fas fa-users"></i></span>
                         <span class="title">Users</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span class="icon"><i class="fab fa-apple"></i></span>
+                    <a href="/admin/dashboard/careers">
+                        <span class="icon"><i class="fas fa-id-badge"></i></span>
                         <span class="title">Careers</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span class="icon"><i class="fab fa-apple"></i></span>
+                    <a href="/admin/dashboard/clusters">
+                        <span class="icon"><i class="fas fa-graduation-cap"></i></span>
                         <span class="title">Clusters</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span class="icon"><i class="fab fa-apple"></i></span>
-                        <span class="title">High Schools</span>
+                    <a href="/admin/dashboard/courses">
+                        <span class="icon"><i class="fas fa-graduation-cap"></i></span>
+                        <span class="title">Courses</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span class="icon"><i class="fab fa-apple"></i></span>
-                        <span class="title">Messages</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fab fa-apple"></i></span>
-                        <span class="title">Settings</span>
+                    <a href="/admin/dashboard/industries">
+                        <span class="icon"><i class="fas fa-industry"></i></span>
+                        <span class="title">Industries</span>
                     </a>
                 </li>
             </ul>
@@ -51,165 +45,29 @@
 
     <div class="main">
         <div class="topbar">
-            <div class="toggle" onClick="toggleMenu();"></div>
-            <div class="search">
-                <label for="">
-                    <input type="text" placeholder="search here" />
-                    <i class="fas fa-search"></i>
-                </label>
-            </div>
-            <div class="user">
-                <img src="/public/images/avatar.png" alt="" />
-            </div>
-        </div>
-
-        <div class="cardBox">
-            <div class="card">
-                <div>
-                    <div class="numbers">1,042</div>
-                    <div class="cardName">Daily Views</div>
-                </div>
-                <div class="iconBox">
-                    <i class="fas fa-eye"></i>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <div class="numbers">80</div>
-                    <div class="cardName">Sales</div>
-                </div>
-                <div class="iconBox">
-                    <i class="fas fa-eye"></i>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <div class="numbers">208</div>
-                    <div class="cardName">Comments</div>
-                </div>
-                <div class="iconBox">
-                    <i class="fas fa-eye"></i>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <div class="numbers">$6,042</div>
-                    <div class="cardName">Earning</div>
-                </div>
-                <div class="iconBox">
-                    <i class="fas fa-eye"></i>
-                </div>
-            </div>
+            <div class="toggle" onClick="toggleMenu();"><i class="fas fa-bars"></i></div>
+            <h2>Users</h2>
+            <button id="create-user" class="btn new">Create New User</button>
         </div>
 
         <div class="details">
             <div class="recentOrders">
-                <div class="cardHeader">
-                    <h2>Recent Orders</h2>
-                    <a href="#" class="btn">View All</a>
-                </div>
-                <table>
+                <table id="users-table">
                     <thead>
                         <tr>
-                            <td>Name</td>
-                            <td>Price</td>
-                            <td>Payment</td>
-                            <td>Status</td>
+                            <th></th>
+                            <th>Email</th>
+                            <th>Name</th>
+                            <th>Index Number</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Star Refrigerator</td>
-                            <td>$1200</td>
-                            <td>Paid</td>
-                            <td><span class="status delivered">Delivered</span></td>
-                        </tr>
-                        <tr>
-                            <td>Star Refrigerator</td>
-                            <td>$1200</td>
-                            <td>Paid</td>
-                            <td><span class="status delivered">Delivered</span></td>
-                        </tr>
-                        <tr>
-                            <td>Star Refrigerator</td>
-                            <td>$1200</td>
-                            <td>Paid</td>
-                            <td><span class="status delivered">Delivered</span></td>
-                        </tr>
-                        <tr>
-                            <td>Star Refrigerator</td>
-                            <td>$1200</td>
-                            <td>Paid</td>
-                            <td><span class="status delivered">Delivered</span></td>
-                        </tr>
-                        <tr>
-                            <td>Star Refrigerator</td>
-                            <td>$1200</td>
-                            <td>Paid</td>
-                            <td><span class="status delivered">Delivered</span></td>
-                        </tr>
-                    </tbody>
+                    <tbody id="users-table-body"></tbody>
                 </table>
-            </div>
-            <div class="recentCustomers">
-                <div class="cardHeader">
-                    <h2>Recent Customers</h2>
+
+                <div class="container-sect">
+                    <div id="pagination-wrapper"></div>
                 </div>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="/public/images/avatar.png" alt="img" /></div>
-                            </td>
-                            <td>
-                                <h4>David<br /><span>Italy</span></h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="/public/images/avatar.png" alt="img" /></div>
-                            </td>
-                            <td>
-                                <h4>David<br /><span>Italy</span></h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="/public/images/avatar.png" alt="img" /></div>
-                            </td>
-                            <td>
-                                <h4>David<br /><span>Italy</span></h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="/public/images/avatar.png" alt="img" /></div>
-                            </td>
-                            <td>
-                                <h4>David<br /><span>Italy</span></h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="/public/images/avatar.png" alt="img" /></div>
-                            </td>
-                            <td>
-                                <h4>David<br /><span>Italy</span></h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="/public/images/avatar.png" alt="img" /></div>
-                            </td>
-                            <td>
-                                <h4>David<br /><span>Italy</span></h4>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
@@ -217,3 +75,4 @@
 
 <!-- Load page specific JavaScript -->
 <script type="text/javascript" src="/public/utils/adminDashboard.js"></script>
+<script type="text/javascript" src="/public/scripts/adminDashboard.js"></script>

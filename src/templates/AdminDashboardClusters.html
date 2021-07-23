@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="/public/styles/adminDashboard.css" />
+<section>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-users-cog"></i></span>
+                        <span class="title"><h2>Admin</h2></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/dashboard">
+                        <span class="icon"><i class="fas fa-users"></i></span>
+                        <span class="title">Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/dashboard/careers">
+                        <span class="icon"><i class="fas fa-id-badge"></i></span>
+                        <span class="title">Careers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/dashboard/clusters">
+                        <span class="icon"><i class="fas fa-graduation-cap"></i></span>
+                        <span class="title">Clusters</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/dashboard/courses">
+                        <span class="icon"><i class="fas fa-graduation-cap"></i></span>
+                        <span class="title">Courses</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/dashboard/industries">
+                        <span class="icon"><i class="fas fa-industry"></i></span>
+                        <span class="title">Industries</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle" onClick="toggleMenu();"><i class="fas fa-bars"></i></div>
+            <h2>Clusters</h2>
+            <button class="btn new">Create New Cluster</button>
+        </div>
+
+        <div class="details">
+            <div class="recentOrders">
+                <table id="clusters-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Title</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="clusters-table-body"></tbody>
+                </table>
+
+                <div class="container-sect">
+                    <div id="pagination-wrapper"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Load page specific JavaScript -->
+<script type="text/javascript" src="/public/utils/adminDashboard.js"></script>
+<script type="text/javascript" src="/public/scripts/adminDashboardCluster.js"></script>

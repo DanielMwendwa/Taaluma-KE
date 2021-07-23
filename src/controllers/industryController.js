@@ -3,7 +3,7 @@
  */
 
 // Dependencies.
-const getIndustries = require("../actions/industry/getIndustry");
+const getIndustry = require("../actions/industry/getIndustry");
 const ResponseContainer = require("../models/ResponseContainer");
 
 /**
@@ -14,7 +14,7 @@ const ResponseContainer = require("../models/ResponseContainer");
 industryController = async (requestData) => {
     switch (requestData.method) {
         case "get":
-            return await getIndustries(requestData);
+            return await getIndustry(requestData);
 
         default:
             return new ResponseContainer(405, { error: "Method is not allowed" });

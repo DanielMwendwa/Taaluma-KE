@@ -23,6 +23,8 @@ industry.preloadData = () => {
         responsePayload.careers.forEach((doc) => {
             let title = doc.title;
             let percent_employed = doc._percent_employed;
+            let code = doc.code;
+            let desc = doc.desc;
 
             const itemElement = document.createElement("div");
             itemElement.innerHTML = `<div class="container">
@@ -39,16 +41,29 @@ industry.preloadData = () => {
                             </div>
                             <h6>Chapter 4</h6>
                             <h2>${title}</h2>
-                            <p class="p-trunc"> Master MongoDB Development for Web & Mobile Apps. CRUD Operations, Indexes, Aggregation Framework - All about MongoDB! </p>
-                            <button class="btn">View Details</button>
+                            <p class="p-trunc">${desc}</p>
+                            <p class="p-trunc"></p>
+                            <button class="btn" id="${code}">View Details</button>
                         </div>
                     </div>
                 </div>
                 `;
             industryContainer.appendChild(itemElement);
 
-            // const trunc = document.querySelector(".p-trunc");
-            // trunc.innerText = trunc.innerText.substring(0, 100) + "...";
+            const truncs = document.querySelectorAll(".p-trunc");
+            truncs.forEach(trunc => {
+                trunc.innerText = trunc.innerText.substring(0, 100) + "...";
+            }) 
+
+            // Add event listeners to card.
+            document.querySelectorAll(".btn").forEach((card) => {
+                card.addEventListener("click", (event) => {
+                    if (event.target) {
+                        console.log(event.target.id);
+                        window.location = `/career?code=${event.target.id}`;
+                    }
+                });
+            });
         });
     });
 };

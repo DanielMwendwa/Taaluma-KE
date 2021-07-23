@@ -101,11 +101,13 @@ body {
 .main .topbar {
     width: 100%;
     background: #fff;
-    height: 60px;
+    height: 50px;
     padding: 0 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-right: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .toggle {
@@ -127,85 +129,6 @@ body {
     color: #111;
 }
 
-.search {
-    position: relative;
-    width: 400px;
-    margin: 0 10px;
-}
-
-.search label {
-    position: relative;
-    width: 100%;
-}
-
-.search label input {
-    width: 100%;
-    height: 40px;
-    border-radius: 40px;
-    padding: 5px 20px;
-    padding-left: 35px;
-    outline: none;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.search label .fas {
-    position: absolute;
-    left: 15px;
-    top: 4px;
-}
-
-.user {
-    position: relative;
-    min-width: 50px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.user img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.cardBox {
-    position: relative;
-    width: 100%;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-}
-
-.cardBox .card {
-    position: relative;
-    background: #fff;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-}
-
-.cardBox .card .numbers {
-    position: relative;
-    font-size: 2em;
-    font-weight: 500;
-}
-
-.cardBox .card .cardName {
-    color: #999;
-}
-
-.cardBox .card .iconBox {
-    font-size: 2.5em;
-    color: #03a9f4;
-}
-
 .details {
     position: relative;
     width: 100%;
@@ -213,36 +136,42 @@ body {
     padding-top: 0;
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: 2fr 1fr;
+    /* grid-template-columns: 2fr 1fr; */
 }
 
 .details .recentOrders {
     position: relative;
     min-height: 530px;
     background: #fff;
-    padding: 20px;
-}
-
-.cardHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.cardHeader h2 {
-    font-weight: 600;
+    margin-top: 10px;
+    /* padding: 20px; */
 }
 
 .btn {
-    position: relative;
-    padding: 5px 10px;
-    background: #03a9f4;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
+    background-color: #302D2B;
+	border: 0;
+	border-radius: 4px;
+	color: #fff;
+	cursor: pointer;
+	padding: 12px 30px;
+    font-size: 12px;
 }
 
-.details table {
+.btn.delete {
+	background-color: red;
+}
+
+.btn.new {
+    background-color: green;
+}
+.btn.view {
+    background-color: #ff1b68;
+}
+.btn.edit {
+    background-color: #0070ba;
+}
+
+/* .details table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
@@ -283,9 +212,9 @@ body {
 .details .recentOrders table thead tr td:nth-child(3),
 .details .recentOrders table tbody tr td:nth-child(3) {
     text-align: center;
-}
+} */
 
-.status {
+/* .status {
     position: relative;
     padding: 2px 4px;
     background: #f00;
@@ -294,8 +223,8 @@ body {
     font-size: 14px;
     font-weight: 300;
     letter-spacing: 1px;
-}
-
+} */
+/* 
 .delivered {
     background: #8de02c;
 }
@@ -310,52 +239,86 @@ body {
 
 .inprogress {
     background: #1795ce;
-}
+} */
 
-.details .recentCustomers {
-    position: relative;
-    min-height: 530px;
-    background: #fff;
-    padding: 20px;
-}
-
-.details .recentCustomers .imgBx {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.details .recentCustomers .imgBx img {
-    position: absolute;
-    top: 0;
-    left: 0;
+table {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-spacing: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
-.details .recentCustomers table tr td h4 span {
-    font-size: 14px;
-    color: #999;
+table tr th {
+    background-color: #f1f5f8;
+    border-bottom: 2px solid #ccc;
+    font-size: 12px;
+    padding: 10px;
+    text-transform: uppercase;
+    text-align: left;
 }
 
-.details .recentCustomers table tr:hover,
-.details .recentCustomers table tr:hover td h4 span {
-    background: #03a9f4;
-    color: #fff;
+table tr {
+    border-bottom: 1px solid #ccc;
 }
 
-.details .recentCustomers table tr td {
-    padding: 7px 10px;
+table tr td {
+    background-color: #fff;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
 }
 
-.details .recentCustomers table tr td h4 {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.2em;
+table tr:nth-of-type(odd) td {
+    background-color: #f9f9f9;
 }
+
+table tr:last-of-type td {
+    border-bottom: 0;
+}
+
+table tr td:nth-of-type(1),
+table tr td:nth-of-type(2) {
+    font-weight: bold;
+}
+
+
+table tr th:nth-of-type(5),
+table tr td:nth-of-type(5) {
+    text-align: center;
+}
+
+.container-sect {
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    padding: 10px;
+    width: 500px;
+}
+
+.container-sect .controls-item {
+    display: inline-block;
+}
+
+.container-sect .btn {
+    margin: 1px;
+}
+
+@media screen and (max-width: 768px) {
+    table tr *:nth-of-type(4),
+    table tr *:nth-of-type(5) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    body {
+        justify-content: flex-start;
+    }
+
+    table tr *:nth-of-type(6) {
+        display: none;
+    }
+}
+
+
+
 
 @media (max-width: 992px) {
     .navigation {
@@ -373,9 +336,6 @@ body {
         width: calc(100% - 300px);
         left: 300px;
     }
-    .cardBox {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media (max-width: 768px) {
@@ -389,17 +349,14 @@ body {
 }
 
 @media (max-width: 480px) {
-    .cardBox {
-        grid-template-columns: repeat(1, 1fr);
-    }
 
     .details .recentOrders {
         overflow: auto;
     }
 
-    .details .recentOrders table {
+    /* .details .recentOrders table {
         width: 600px;
-    }
+    } */
 
     .navigation {
         width: 100%;

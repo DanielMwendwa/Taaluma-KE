@@ -32,82 +32,8 @@
             <button type="submit">Update Account</button>
         </form>
     </div>
-
-    <div class="profile-img-section">
-        <p>Update Profile Picture</p>
-        <div class="file-form" enctype="multipart/form-data" action="http://localhost:8000/upload" method="post">
-            <div class="file-input">
-                <input type="file" name="myFile" id="file" hidden />
-                <label class="profile-img-label" for="file" id="selector">Select file</label>
-            </div>
-            <input class="upload-img" type="submit" value="upload" />
-        </div>
-    </div>
 </div>
 <style>
-    .profile-img-section {
-        align-self: flex-start;
-        margin-left: 40px;
-    }
-    .file-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .file-input {
-        margin-bottom: 30px;
-    }
-    .profile-img-label {
-        padding: 16px 48px;
-        border: 3px solid #ff1b68;
-        border-radius: 48px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: bold;
-        color: #ff1b68;
-    }
-
-    .profile-img-label:hover {
-        transform: scale(1.04);
-    }
-
-    .profile-img-label.active {
-        background-color: #ff1b68;
-        color: #242424;
-    }
-
-    .profile-img-label span {
-        font-weight: normal;
-    }
-
-    .profile-img-label.image {
-        width: 200px;
-        height: 200px;
-        padding: 0px;
-        border-radius: 8px;
-        overflow: hidden;
-    }
-
-    .profile-img-label.image img {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-    }
-
-    .upload-img {
-        border-radius: 0.5px;
-        background-color: #ff1b68;
-        border: 1px solid #ff1b68;
-        box-shadow: 0 16px 22px -17px #03153b;
-        color: #fff;
-        cursor: pointer;
-        font-size: 16px;
-        line-height: 20px;
-        padding: 12px 20px;
-        width: 200px;
-    }
-
     * {
         box-sizing: border-box;
     }

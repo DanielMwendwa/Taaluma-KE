@@ -23,7 +23,34 @@
             <label for="loginPassword">Confirm Password</label>
         </div>
         <input type="submit" value="sign up" class="submit-btn" />
+        <a href="#school-account" class="school-account">School Account?</a>
     </form>
+
+    <div id="school-account">
+        <form class="form" id="userSchoolAccountCreate" action="/api/schools" method="POST">
+            <a href="#" class="close">&times;</a>
+            <h2>School Account</h2>
+            <div class="formError"></div>
+            <div class="formSuccess"></div>
+            <div class="input-group">
+                <input type="text" name="name" id="schoolName" required />
+                <label for="name">School Name</label>
+            </div>
+            <div class="input-group">
+                <input type="email" name="email" id="schoolEmail" required />
+                <label for="email">Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" id="schoolPassword" required />
+                <label for="password">Password</label>
+            </div>
+            <div class="input-group">
+                <input type="password" name="confirmPassword" id="schoolConfirmPassword" required />
+                <label for="confirmPassword">Confirm Password</label>
+            </div>
+            <input type="submit" value="Submit" class="submit-btn" />
+        </form>
+    </div>
 </div>
 
 <!-- Load page specific JavaScript -->
