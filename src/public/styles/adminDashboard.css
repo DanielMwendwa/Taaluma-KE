@@ -18,7 +18,7 @@ body {
     position: fixed;
     width: 300px;
     height: 100%;
-    background: #003147;
+    background: #ffffcc;
     transition: 0.5s;
     overflow: hidden;
 }
@@ -38,18 +38,24 @@ body {
     position: relative;
     width: 100%;
     list-style: none;
+    border-bottom: green solid 1px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .navigation ul li:hover {
-    background: #03a9f4;
+    background: #cccc99;
 }
 
 .navigation ul li:nth-child(1) {
-    margin-bottom: 20px;
+    background: #2ddf5c;
+}
+.navigation ul li:nth-child(1):hover {
+    background: #2ddf5c;
 }
 
-.navigation ul li:nth-child(1):hover {
-    background: transparent;
+.navigation ul li:nth-child(1) {
+    border-bottom: none;
 }
 
 .navigation ul li a {
@@ -58,7 +64,7 @@ body {
     width: 100%;
     display: flex;
     text-decoration: none;
-    color: #fff;
+    color: #0e4f1f;
 }
 
 .navigation ul li a .icon {
@@ -66,13 +72,8 @@ body {
     display: block;
     min-width: 60px;
     height: 60px;
-    line-height: 60px;
+    line-height: 78px;
     text-align: center;
-}
-
-.navigation ul li a .icon .fab {
-    color: #fff;
-    font-size: 24px;
 }
 
 .navigation ul li a .title {
@@ -82,6 +83,12 @@ body {
     height: 60px;
     line-height: 60px;
     white-space: nowrap;
+}
+
+.admin-menu-top {
+    height: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-right: none;
 }
 
 .main {
@@ -107,26 +114,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-right: 50px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .toggle {
-    position: relative;
-    width: 60px;
-    height: 60px;
     cursor: pointer;
-}
-
-.toggle::before {
-    content: "\f0c9";
-    font-family: fontAwesome;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    line-height: 60px;
-    font-size: 24px;
-    text-align: center;
-    color: #111;
 }
 
 .details {
@@ -139,7 +131,7 @@ body {
     /* grid-template-columns: 2fr 1fr; */
 }
 
-.details .recentOrders {
+.details .cardBody {
     position: relative;
     min-height: 530px;
     background: #fff;
@@ -148,98 +140,34 @@ body {
 }
 
 .btn {
-    background-color: #302D2B;
-	border: 0;
-	border-radius: 4px;
-	color: #fff;
-	cursor: pointer;
-	padding: 12px 30px;
+    background-color: #302d2b;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    padding: 12px 30px;
     font-size: 12px;
 }
 
 .btn.delete {
-	background-color: red;
+    background-color: red;
 }
 
-.btn.new {
+.btn.new,
+.btn.approve {
     background-color: green;
 }
 .btn.view {
     background-color: #ff1b68;
 }
+
+.btn.reject {
+    background-color: #fd0000;
+}
+
 .btn.edit {
     background-color: #0070ba;
 }
-
-/* .details table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-.details table thead td {
-    font-weight: 600;
-}
-
-.details .recentOrders table tr {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.details .recentOrders table tbody tr:last-child {
-    border-bottom: none;
-}
-
-.details .recentOrders table tbody tr:hover {
-    background: #03a9f4;
-    color: #fff;
-}
-
-.details .recentOrders table tr td {
-    padding: 9px 5px;
-}
-
-.details .recentOrders table thead tr td:last-child,
-.details .recentOrders table tbody tr td:last-child {
-    text-align: right;
-}
-
-.details .recentOrders table thead tr td:nth-child(2),
-.details .recentOrders table tbody tr td:nth-child(2) {
-    text-align: right;
-    padding-right: 20px;
-}
-
-.details .recentOrders table thead tr td:nth-child(3),
-.details .recentOrders table tbody tr td:nth-child(3) {
-    text-align: center;
-} */
-
-/* .status {
-    position: relative;
-    padding: 2px 4px;
-    background: #f00;
-    color: #fff;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 300;
-    letter-spacing: 1px;
-} */
-/* 
-.delivered {
-    background: #8de02c;
-}
-
-.pending {
-    background: #f9ca3f;
-}
-
-.return {
-    background: #f00;
-}
-
-.inprogress {
-    background: #1795ce;
-} */
 
 table {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -280,7 +208,6 @@ table tr td:nth-of-type(2) {
     font-weight: bold;
 }
 
-
 table tr th:nth-of-type(5),
 table tr td:nth-of-type(5) {
     text-align: center;
@@ -317,9 +244,6 @@ table tr td:nth-of-type(5) {
     }
 }
 
-
-
-
 @media (max-width: 992px) {
     .navigation {
         left: -300px;
@@ -349,14 +273,9 @@ table tr td:nth-of-type(5) {
 }
 
 @media (max-width: 480px) {
-
-    .details .recentOrders {
+    .details .cardBody {
         overflow: auto;
     }
-
-    /* .details .recentOrders table {
-        width: 600px;
-    } */
 
     .navigation {
         width: 100%;
@@ -385,4 +304,121 @@ table tr td:nth-of-type(5) {
         width: 100%;
         left: 0;
     }
+}
+
+* {
+    box-sizing: border-box;
+}
+.profile-page {
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+.container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+.header {
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #f7f7f7;
+    padding: 20px 40px;
+}
+
+.header h2 {
+    margin: 0;
+}
+
+.form {
+    padding: 30px 40px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+}
+
+.form-control input:focus {
+    outline: 0;
+    border-color: #777;
+}
+
+.form-control.success input {
+    border-color: #2ecc71;
+}
+
+.form-control.error input {
+    border-color: #e74c3c;
+}
+
+.form-control i {
+    visibility: hidden;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-control small {
+    color: #e74c3c;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form-control.error small {
+    visibility: visible;
+}
+
+.form button {
+    background-color: #ff1b68;
+    border: 2px solid #ff1b68;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+select {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    padding: 8px 15px;
+    border: 0;
+    width: 100%;
+    outline: 0;
 }

@@ -18,6 +18,11 @@ const templateController = require("./controllers/templateController");
 const publicController = require("./controllers/publicController");
 const careerController = require("./controllers/careerController");
 const careersController = require("./controllers/careersController");
+const performanceController = require("./controllers/performanceController");
+const altTitleController = require("./controllers/altTitleController");
+const eduController = require("./controllers/eduController");
+const actController = require("./controllers/actController");
+const coursesController = require("./controllers/coursesController");
 
 // Create module container.
 const router = {};
@@ -61,6 +66,10 @@ router.routes = {
         controller: clusterController,
     },
 
+    "api/courses": {
+        controller: coursesController,
+    },
+
     "api/industries": {
         controller: industriesController,
     },
@@ -75,6 +84,22 @@ router.routes = {
 
     "api/career/all": {
         controller: careersController,
+    },
+
+    "api/performance": {
+        controller: performanceController,
+    },
+
+    "api/alt-title": {
+        controller: altTitleController,
+    },
+
+    "api/edu": {
+        controller: eduController,
+    },
+
+    "api/act": {
+        controller: actController,
     },
 
     // Front-End specific routes.
@@ -127,6 +152,11 @@ router.routes = {
         data: { "head.title": "Dashboard" },
     },
 
+    "admin/dashboard/schools": {
+        controller: templateController,
+        data: { "head.title": "Dashboard" },
+    },
+
     "admin/dashboard/courses": {
         controller: templateController,
         data: { "head.title": "Dashboard" },
@@ -143,6 +173,23 @@ router.routes = {
     },
 
     "admin/user/add": {
+        controller: templateController,
+        data: { "head.title": "Dashboard" },
+    },
+
+    "admin/career/add": {
+        controller: templateController,
+        data: { "head.title": "Dashboard" },
+    },
+    "admin/career/add/alt": {
+        controller: templateController,
+        data: { "head.title": "Dashboard" },
+    },
+    "admin/career/add/act": {
+        controller: templateController,
+        data: { "head.title": "Dashboard" },
+    },
+    "admin/career/add/edu": {
         controller: templateController,
         data: { "head.title": "Dashboard" },
     },
@@ -187,6 +234,11 @@ router.routes = {
         data: { "head.title": "Career" },
     },
 
+    recommended: {
+        controller: templateController,
+        data: { "head.title": "Recommended careers" },
+    },
+
     "search/career": {
         controller: templateController,
         data: { "head.title": "Search Career" },
@@ -200,6 +252,16 @@ router.routes = {
     "account/recovery": {
         controller: templateController,
         data: { "head.title": "Account Recovery" },
+    },
+
+    "admin/sys/report": {
+        controller: templateController,
+        data: { "head.title": "System Report" },
+    },
+
+    "course/careers": {
+        controller: templateController,
+        data: { "head.title": "Careers based on course" },
     },
 };
 

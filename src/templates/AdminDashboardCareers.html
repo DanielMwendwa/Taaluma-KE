@@ -1,57 +1,23 @@
 <link rel="stylesheet" href="/public/styles/adminDashboard.css" />
 <section>
-    <div class="container">
-        <div class="navigation">
-            <ul>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-users-cog"></i></span>
-                        <span class="title"><h2>Admin</h2></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/admin/dashboard">
-                        <span class="icon"><i class="fas fa-users"></i></span>
-                        <span class="title">Users</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/admin/dashboard/careers">
-                        <span class="icon"><i class="fas fa-id-badge"></i></span>
-                        <span class="title">Careers</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/admin/dashboard/clusters">
-                        <span class="icon"><i class="fas fa-graduation-cap"></i></span>
-                        <span class="title">Clusters</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/admin/dashboard/courses">
-                        <span class="icon"><i class="fas fa-graduation-cap"></i></span>
-                        <span class="title">Courses</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/admin/dashboard/industries">
-                        <span class="icon"><i class="fas fa-industry"></i></span>
-                        <span class="title">Industries</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <div class="container" id="admin-sidebar"></div>
 
     <div class="main">
         <div class="topbar">
-            <div class="toggle" onClick="toggleMenu();"><i class="fas fa-bars"></i></div>
-            <h2>Career</h2>
-            <button class="btn new">Create New Career</button>
+            <div class="toggle" onClick="toggleMenu();">
+                <img width="30px" height="30px" src="/public/icons/bars-solid.png">
+            </div>
+            <h2>Careers Data</h2>
+            <div>
+                <button id="new-career" class="btn new">Create New Career</button>
+                <button id="alt-career" class="btn new">Add Alternate Titles</button>
+                <button id="career-edu" class="btn new">Add Education</button>
+                <button id="career-act" class="btn new">Add Activities</button>
+            </div>
         </div>
 
         <div class="details">
-            <div class="recentOrders">
+            <div class="cardBody">
                 <table id="career-table">
                     <thead>
                         <tr>

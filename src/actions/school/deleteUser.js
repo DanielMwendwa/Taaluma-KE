@@ -31,7 +31,7 @@ const deleteUser = async (requestData) => {
     // Lookup the user.
     let userData;
     try {
-        userData = await db.collection("users").findOne({email})
+        userData = await db.collection("school").findOne({email})
     } catch (e) {
         console.error(e);
     }
@@ -39,7 +39,7 @@ const deleteUser = async (requestData) => {
     // Create user instance.
     const user = new User().fromSnapshot(userData);
     try {
-        await db.collection("users").deleteOne({email: user.email});
+        await db.collection("school").deleteOne({email: user.email});
     } catch (e) {
         console.error(e);
     }

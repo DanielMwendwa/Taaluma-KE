@@ -13,21 +13,32 @@ class User {
      * @param {string} email - User email.
      * @param {string} password - User password.
      * @param {string} indexNumber - User index number.
-     * @param {string} imagePath - User image path.
      * @param {boolean} isAdmin - Whether User is admin.
+     * @param {string} account - Student/school account
      * @return {User}
      */
-    fromObject({ name, email, password, indexNumber = null, imagePath = "public/images/avatar.png", isAdmin = false }) {
+    fromObject({ name, email, password, indexNumber = null, isAdmin = false, account = "student"  }) {
         this.name = validator.parseString(name);
         this.email = validator.parseEmail(email);
         this.hashedPassword = passwordHash(validator.parseString(password));
-        if (indexNumber != null) {
+        if (indexNumber) {
+            indexNumber = parseInt(indexNumber)
             this.indexNumber = validator.parsePositiveInteger(indexNumber);
         } else {
             this.indexNumber = indexNumber;
         }
-        this.imagePath = validator.parseString(imagePath);
-        this.isAdmin = isAdmin;
+
+        if (typeof isAdmin == "string") {
+            if (isAdmin.toLowerCase() == "yes") {
+                this.isAdmin = true;
+            } else {
+                this.isAdmin = false;
+            }
+        } else {
+            this.isAdmin = isAdmin;
+        }
+
+        this.account = validator.parseString(account);
 
         // Return self instance.
         return this;
@@ -39,17 +50,17 @@ class User {
      * @param {string} email - User email.
      * @param {string} hashedPassword - Hashed user password.
      * @param {string} indexNumber - User index number.
-     * @param {string} imagePath - User image path.
      * @param {boolean} isAdmin - Whether User is admin.
+     * @param {string} account - Student/school account
      * @return {User}
      */
-    fromSnapshot({ name, email, hashedPassword, indexNumber, imagePath, isAdmin }) {
+    fromSnapshot({ name, email, hashedPassword, indexNumber, isAdmin, account }) {
         this.name = name;
         this.email = email;
         this.hashedPassword = hashedPassword;
         this.indexNumber = indexNumber;
-        this.imagePath = imagePath;
         this.isAdmin = isAdmin;
+        this.account = account;
 
         // Return self instance.
         return this;
@@ -78,11 +89,12 @@ class User {
      * @param {string} [password]
      * @param {string} [indexNumber]
      */
-    updateFromObject({ name, password, indexNumber }) {
+    updateFromObject({ name, password, indexNumber, isAdmin, account}) {
         const parsedName = validator.parseString(name);
         const parsedHashedPassword = passwordHash(validator.parseString(password));
         const parsedIndexNumber = validator.parsePositiveInteger(parseInt(indexNumber));
-        console.log(parsedIndexNumber)
+        const parsedIsAdmin = validator.parseString(isAdmin);
+        const parsedAccount = validator.parseString(account);
 
         if (parsedName) {
             this.name = parsedName;
@@ -95,6 +107,18 @@ class User {
         if (parsedIndexNumber) {
             this.indexNumber = parsedIndexNumber;
         }
+
+        if (parsedIsAdmin) {
+            if (parsedIsAdmin.toLowerCase() == "yes") {
+                this.isAdmin = true;
+            } else {
+                this.isAdmin = false;
+            }
+        }
+
+        if (parsedAccount) {
+            this.account = parsedAccount;
+        }
     }
 
     /**
@@ -106,8 +130,8 @@ class User {
             name: this.name,
             email: this.email,
             indexNumber: this.indexNumber,
-            imagePath: this.imagePath,
             isAdmin: this.isAdmin,
+            account: this.account
         };
     }
 }

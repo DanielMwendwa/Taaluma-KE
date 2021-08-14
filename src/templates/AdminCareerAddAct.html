@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="/public/styles/adminDashboard.css" />
+<section>
+    <div class="container" id="admin-sidebar"></div>
+
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle" onClick="toggleMenu();">
+                <img width="30px" height="30px" src="/public/icons/bars-solid.png">
+            </div>
+            <h2>User Details</h2>
+            <button id="create-user" class="btn new">Create New User</button>
+        </div>
+
+        <div class="details">
+            <div class="cardBody">
+                <div class="profile-page">
+                    <!-- HTML forms do not support PUT, PATCH or DELETE actions. So, when defining PUT, PATCH or DELETE routes that are called from an HTML form, you will need to add a hidden _method field to the form. The value sent with the _method field will be used as the HTTP request method: -->
+                    <div class="container" style="align-self: flex-start; margin-top: 20px">
+                        <div class="header">
+                            <h2>User</h2>
+                        </div>
+                        <form class="form" id="adminCareerAddAlt" action="/api/act" method="POST">
+                            <div class="formError"></div>
+                            <div class="formSuccess"></div>
+                            <div class="form-control">
+                                <select name="career" id="career-selector">
+                                    <option disabled value="default">Select Career</option>
+                                </select>
+                            </div>
+                            <div class="form-control">
+                                <label for="activity">Alternate title</label>
+                                <input type="text" name="activity" id="activity" />
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small>Error message</small>
+                            </div>
+                            <button type="submit">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Load page specific JavaScript -->
+<script type="text/javascript" src="/public/utils/adminDashboard.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/public/scripts/adminCareerDropdown.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/public/scripts/userAccountCreate.js"></script>

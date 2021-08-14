@@ -103,16 +103,16 @@ industries.preloadData = () => {
             });
 
             pageButtons(data.pages);
-        }
 
-        document.querySelectorAll(".btn.view").forEach((el) => {
-            el.addEventListener("click", (event) => {
-                if (event.target) {
-                    console.log(event.target.id);
-                    window.location = `/admin/industry/action?id=${event.target.id}`;
-                }
+            document.querySelectorAll(".btn.view").forEach((el) => {
+                el.addEventListener("click", (event) => {
+                    if (event.target) {
+                        console.log(event.target.id);
+                        window.location = `/admin/industry/action?code=${event.target.id}`;
+                    }
+                });
             });
-        });
+        }
     });
 };
 

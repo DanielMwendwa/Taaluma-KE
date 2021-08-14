@@ -49,6 +49,15 @@ formProcessor.bindForms = (httpClient) => {
                 }
             });
 
+            if (form.querySelector("select")) {
+                form.querySelectorAll("select#career-selector").forEach((element) => {
+                    if (element.name == "career") {
+                        payload.title = element.value;
+                        payload.code = element.options[element.selectedIndex].id;
+                    }
+                });
+            }
+
             // If the method is DELETE, the payload should be a queryStringObject instead.
             const queryStringObject = method === "DELETE" ? payload : {};
 

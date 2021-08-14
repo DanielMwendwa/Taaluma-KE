@@ -1,9 +1,6 @@
 // Init page module object.
 const industry = {};
 
-// Cached menu items.
-// industry.careers = [];
-
 industry.tags = [];
 
 // Data preloader.
@@ -19,8 +16,8 @@ industry.preloadData = () => {
 
     // Fetch the menu data.
     httpClient.request(requestPayload).then(({ statusCode, responsePayload }) => {
-        console.log(responsePayload);
-        responsePayload.careers.forEach((doc) => {
+        let careers = responsePayload.careers.slice(0,10);
+        careers.forEach((doc) => {
             let title = doc.title;
             let percent_employed = doc._percent_employed;
             let code = doc.code;
@@ -32,14 +29,12 @@ industry.preloadData = () => {
                         <div class="preview">
                             <h6>Course</h6>
                             <h2>Tags</h2>
-                            <a href="#"> View All Chapters </a>
                         </div>
                         <div class="info">
                             <div class="progress-wrapper">
                                 <div class="progress"></div>
                                 <span class="progress-text">${percent_employed}% employed</span>
                             </div>
-                            <h6>Chapter 4</h6>
                             <h2>${title}</h2>
                             <p class="p-trunc">${desc}</p>
                             <p class="p-trunc"></p>

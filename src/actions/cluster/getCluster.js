@@ -16,17 +16,13 @@ const getCluster = async (requestData) => {
         return new ResponseContainer(400, { error: "Missing required fields" });
     }
 
-    // Lookup the cluster.
-    let courses;
-    let projection = {_id: 0}
     try {
-        cursor = await db.collection("courses").find({cluster}).project(projection);
-        courses = await cursor.toArray();
+        clusterData = await db.collection("clusters").findOne({cluster});
     } catch (e) {
         console.error(e);
     }
 
-    return new ResponseContainer(200, courses);
+    return new ResponseContainer(200, clusterData);
 };
 
 // Export module.

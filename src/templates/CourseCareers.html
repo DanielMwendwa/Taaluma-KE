@@ -1,0 +1,124 @@
+<section id="career-search">
+    <h1 id="course-title"></h1>
+    <small>Click on any of the careers below to view details</small>
+    <table class="myTable" id="course-career-table">
+        <tbody>
+            <tr>
+                <th>Careers</th>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<script src="/public/scripts/courseCareer.js"></script>
+
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Muli:300,600&display=swap");
+
+    * {
+        box-sizing: border-box;
+    }
+
+    #career-search {
+        display: flex;
+        flex-direction: column;
+        font-family: "Muli", sans-serif;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .input-group {
+        width: 450px;
+    }
+
+    #searchBox {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+
+    #searchBox:focus {
+        outline: none;
+    }
+
+    a {
+        color: #3498db;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    table {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        border-spacing: 0;
+        min-width: 900px;
+    }
+
+    table tr th {
+        background-color: #f1f5f8;
+        border-bottom: 2px solid #ccc;
+        font-size: 12px;
+        padding: 10px;
+        text-transform: uppercase;
+        text-align: left;
+    }
+
+    table tr {
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
+    }
+
+    table tr td {
+        background-color: #fff;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    table tr:nth-of-type(odd) td {
+        background-color: #f9f9f9;
+    }
+
+    table tr td:hover {
+        background: #000;
+        color: white;
+    }
+
+    table tr:last-of-type td {
+        border-bottom: 0;
+    }
+
+    table tr td:nth-of-type(1),
+    table tr th:nth-of-type(1) {
+        font-weight: bold;
+        text-align: center;
+    }
+
+    table tr td:nth-of-type(1) {
+        text-align: center;
+    }
+
+    @media screen and (max-width: 768px) {
+        table tr *:nth-of-type(4),
+        table tr *:nth-of-type(5) {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 550px) {
+        body {
+            justify-content: flex-start;
+        }
+
+        table tr *:nth-of-type(6) {
+            display: none;
+        }
+    }
+</style>

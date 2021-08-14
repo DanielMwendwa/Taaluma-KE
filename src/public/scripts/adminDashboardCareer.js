@@ -102,17 +102,30 @@ career.preloadData = () => {
             });
 
             pageButtons(data.pages);
+
+            document.querySelectorAll(".btn.view").forEach((el) => {
+                el.addEventListener("click", (event) => {
+                    console.log(event);
+                    if (event.target) {
+                        console.log(event.target.id);
+                        window.location = `/admin/career/action?code=${event.target.id}`;
+                    }
+                });
+            });
         }
 
-        document.querySelectorAll(".btn.view").forEach((el) => {
-            el.addEventListener("click", (event) => {
-                console.log(event);
-                if (event.target) {
-                    console.log(event.target.id);
-                    window.location = `/admin/career/action?code=${event.target.id}`;
-                }
-            });
-        });
+        document.getElementById("new-career").addEventListener("click", () => {
+            window.location = "/admin/career/add"
+        })
+        document.getElementById("alt-career").addEventListener("click", () => {
+            window.location = "/admin/career/add/alt"
+        })
+        document.getElementById("career-edu").addEventListener("click", () => {
+            window.location = "/admin/career/add/edu"
+        })
+        document.getElementById("career-act").addEventListener("click", () => {
+            window.location = "/admin/career/add/act"
+        })
     });
 };
 

@@ -4,7 +4,7 @@
 
 // Dependencies.
 const putUser = require("../actions/school/putUser");
-const getUser = require("../actions/school/getUser");
+const getUsers = require("../actions/school/getUsers");
 const postUser = require("../actions/school/postUser");
 const deleteUser = require("../actions/school/deleteUser");
 const ResponseContainer = require("../models/ResponseContainer");
@@ -17,7 +17,7 @@ const ResponseContainer = require("../models/ResponseContainer");
 schoolUserController = async (requestData) => {
     switch (requestData.method) {
         case "get":
-            return await getUser(requestData);
+            return await getUsers(requestData);
 
         case "post":
             return await postUser(requestData);

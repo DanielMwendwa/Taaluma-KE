@@ -39,6 +39,7 @@ const putUser = async (requestData) => {
     // Create user instance.
     const user = new User().fromSnapshot(userData);
 
+    console.log(requestData.payload)
     // Update user data.
     user.updateFromObject(requestData.payload);
 

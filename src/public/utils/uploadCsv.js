@@ -9,8 +9,11 @@ const upload = () => {
 
     const reader = new FileReader();
     reader.onload = (event) => {
-        let jsonData = csvJSON(event.target.result);
-        console.log(jsonData);
+        let payload = csvJSON(event.target.result);
+        const requestPayload = { path: "/api/performance", method: "POST", payload };
+        httpClient.request(requestPayload).then(({ statusCode, responsePayload }) => {
+            console.log(statusCode);
+        });
 
         let table = document.createElement("table");
         let lines = event.target.result.split("\n");
@@ -35,7 +38,7 @@ const upload = () => {
 };
 
 const csvJSON = (csv) => {
-    let lines = csv.split("\n");
+    let lines = csv.split(/\r|\n/);
 
     let result = [];
 
@@ -44,6 +47,8 @@ const csvJSON = (csv) => {
     for (let i = 1; i < lines.length; i++) {
         let obj = {};
         let currentline = lines[i].split(",");
+
+        if (currentline[0] == "") continue;
 
         for (let j = 0; j < headers.length; j++) {
             obj[headers[j]] = currentline[j];

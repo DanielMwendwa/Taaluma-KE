@@ -257,7 +257,8 @@ body.loggedOut a.loggedOut {
     display: block;
 }
 
-li.appAdmin {
+li.appAdmin,
+li.schoolAccount {
     display: none;
 }
 

@@ -28,13 +28,14 @@ user.preloadData = () => {
         document.querySelector("#adminUserAction input[name=email]").value = email;
         document.querySelector("#adminUserAction input[name=indexNumber]").value = indexNumber;
         if (isAdmin) {
-            document.querySelector("#adminUserAction input[name=admin]").value = "YES";
+            document.querySelector("#adminUserAction input[name=isAdmin]").value = "YES";
         } else {
-            document.querySelector("#adminUserAction input[name=admin]").value = "NO";
+            document.querySelector("#adminUserAction input[name=isAdmin]").value = "NO";
         }
     });
 
     document.getElementById("delete-user").addEventListener("click", (event) => {
+        alert("Are you sure you want to delete the user")
         httpClient.request(deleteRequestPayload).then(({ statusCode, responsePayload }) => {
             if (statusCode == 200) {
                 window.location = "/admin/dashboard";

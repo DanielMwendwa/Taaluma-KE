@@ -107,6 +107,15 @@ career.preloadData = () => {
             }
         });
     });
+
+    document.getElementById("delete-career").addEventListener("click", (event) => {
+        alert("Are you sure you want to delete the career")
+        // httpClient.request(deleteRequestPayload).then(({ statusCode, responsePayload }) => {
+        //     if (statusCode == 200) {
+        //         window.location = "/admin/dashboard";
+        //     }
+        // });
+    });
 };
 
 // Init user current page.

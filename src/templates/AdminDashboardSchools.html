@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/public/styles/adminDashboard.css" />
+<section>
+    <div class="container" id="admin-sidebar"></div>
+
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle" onClick="toggleMenu();">
+                <img width="30px" height="30px" src="/public/icons/bars-solid.png">
+            </div>
+            <h2>Schools Accounts</h2>
+            <div></div>
+        </div>
+
+        <div class="details">
+            <div class="cardBody">
+                <table id="users-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>School</th>
+                            <th>Email</th>
+                            <th>Action</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-table-body"></tbody>
+                </table>
+
+                <div class="container-sect">
+                    <div id="pagination-wrapper"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Load page specific JavaScript -->
+<script type="text/javascript" src="/public/utils/adminDashboard.js"></script>
+<script type="text/javascript" src="/public/scripts/adminDashboardSchool.js"></script>

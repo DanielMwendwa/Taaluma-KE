@@ -30,18 +30,16 @@ const postUser = async (requestData) => {
     } catch (e) {
         console.error(e);
     }
-
-    if (config.appAdmins.includes(user.email)) {
-        user.isAdmin = true;
-    }
     
     if (userData) {
         return new ResponseContainer(400, {error: "A user with that email already exists"});
     }
 
-    const verified = user.verifyPassword(userRawData.confirmPassword);
-    if (!verified) {
-        return new ResponseContainer(400, {error: "Passwords Don't Match"});
+    if (userRawData.confirmPassword) {
+        const verified = user.verifyPassword(userRawData.confirmPassword);
+        if (!verified) {
+            return new ResponseContainer(400, {error: "Passwords Don't Match"});
+        }
     }
     
     // Store the user.

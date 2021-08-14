@@ -11,7 +11,7 @@
     margin: 0;
     padding-right: 1rem;
     min-height: 100vh;
-    margin-bottom: -47px;
+    margin-bottom: -100px;
 }
 .dashboard-details a {
     color: #fff;
@@ -22,17 +22,18 @@
     display: flex;
     flex-direction: column;
     width: 60%;
-    height: 90vh;
+    height: 92vh;
+    padding-bottom: 30px;
 }
 
 .aside-img {
     width: 40%;
-    height: 90vh;
+    height: 100vh;
 }
 
 .aside-img img {
-    object-fit: cover;
-    height: 100%;
+    object-fit: contain;
+    height: 94%;
     width: 100%;
 }
 
@@ -41,7 +42,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
+    /* padding: 1.5rem; */
+    padding: 0.85rem;
 }
 
 .box:not(:last-of-type) {
@@ -93,6 +95,10 @@
 
 .fa-chevron-right {
     font-size: 3rem;
+}
+
+.schoolAccount {
+    padding-top: 20px
 }
 
 @media screen and (max-width: 768px) {

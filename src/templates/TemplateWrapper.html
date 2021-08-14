@@ -5,12 +5,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{head.title} | {global.appName}</title>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-            crossorigin="anonymous"
-        />
         <link rel="stylesheet" href="/public/styles/shared.css" />
         <link rel="stylesheet" href="/public/styles/getInTouch.css" />
         <script type="text/javascript" charset="UTF-8" src="/public/scripts/httpClient.js"></script>
@@ -39,7 +33,7 @@
                     <li class="main-nav__item loggedIn">
                         <a href="/user/dashboard">Dashboard</a>
                     </li>
-                    <li class="main-nav__item loggedIn appAdmi">
+                    <li class="main-nav__item loggedIn appAdmin">
                         <a href="/admin/dashboard">Admin</a>
                     </li>
                     <li class="main-nav__item loggedIn">
@@ -50,6 +44,9 @@
                     </li>
                     <li class="main-nav__item main-nav__item--cta loggedOut">
                         <a href="/user/session/create">Login</a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="/faq">FAQ</a>
                     </li>
                     <li class="main-nav__item main-nav__item--cta loggedIn">
                         <a href="#" id="logoutButton">Log out</a>
@@ -74,36 +71,34 @@
         <!-- SOCIAL PANEL HTML -->
         <div class="social-panel-container">
             <div class="social-panel">
-                <p>
-                    Created with <i class="fa fa-heart"></i> by
-                    <a target="_blank" href="https://facebook.com/">Daniel Mwendwa</a>
-                </p>
-                <button class="close-btn"><i class="fas fa-times"></i></button>
+                <button class="close-btn">
+                    <img width="25px" height="25px" src="/public/icons/times-solid.png" alt="x" />
+                </button>
                 <h4>Get in touch on</h4>
                 <ul>
                     <li>
                         <a href="https://www.patreon.com/" target="_blank">
-                            <i class="fab fa-discord"></i>
+                            <img width="20px" height="20px" src="/public/icons/discord-brands.png" alt="discord" />
                         </a>
                     </li>
                     <li>
                         <a href="https://twitter.com/" target="_blank">
-                            <i class="fab fa-twitter"></i>
+                            <img width="20px" height="20px" src="/public/icons/twitter-brands.png" alt="twitter" />
                         </a>
                     </li>
                     <li>
                         <a href="https://linkedin.com/in/" target="_blank">
-                            <i class="fab fa-linkedin"></i>
+                            <img width="20px" height="20px" src="/public/icons/linkedin-brands.png" alt="linkedin" />
                         </a>
                     </li>
                     <li>
                         <a href="https://facebook.com/" target="_blank">
-                            <i class="fab fa-facebook"></i>
+                            <img width="20px" height="20px" src="/public/icons/facebook-brands.png" alt="facebook" />
                         </a>
                     </li>
                     <li>
                         <a href="https://instagram.com/" target="_blank">
-                            <i class="fab fa-instagram"></i>
+                            <img width="20px" height="20px" src="/public/icons/instagram-brands.png" alt="instagram" />
                         </a>
                     </li>
                 </ul>
@@ -114,10 +109,12 @@
             <nav>
                 <ul class="main-footer__links">
                     <li class="main-footer__link">
-                        <a href="/faq">FAQ</a>
-                    </li>
-                    <li class="main-footer__link">
-                        <a href="#">Taaluma Kenya &copy; 2021</a>
+                        <a href="#"
+                            >Taaluma Kenya &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script></a
+                        >
                     </li>
                 </ul>
             </nav>

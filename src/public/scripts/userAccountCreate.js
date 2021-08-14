@@ -1,5 +1,6 @@
 // Init page module object.
 const userAccountCreate = {};
+const adminUserAccountCreate = {};
 const schoolUserAccountCreate = {};
 
 // Callback that is being called once userAccountCreate is successfully submit.
@@ -28,6 +29,10 @@ userAccountCreate.formSuccessProcessor = ({ detail: { formId, requestPayload, re
         });
 };
 
+adminUserAccountCreate.formSuccessProcessor = ({ detail: { formId, requestPayload, responsePayload } }) => {
+    window.location = "/admin/dashboard";
+};
+
 schoolUserAccountCreate.formSuccessProcessor = ({ detail: { formId, requestPayload, responsePayload } }) => {
     console.log(formId)
     // If forms saved successfully and they have success messages, show them.
@@ -40,6 +45,7 @@ schoolUserAccountCreate.formSuccessProcessor = ({ detail: { formId, requestPaylo
 userAccountCreate.init = () => {
     // Subscribe to form events.
     document.addEventListener("userAccountCreateFormSuccess", userAccountCreate.formSuccessProcessor);
+    document.addEventListener("adminUserAddFormSuccess", adminUserAccountCreate.formSuccessProcessor);
     document.addEventListener("userSchoolAccountCreateFormSuccess", schoolUserAccountCreate.formSuccessProcessor);
 };
 

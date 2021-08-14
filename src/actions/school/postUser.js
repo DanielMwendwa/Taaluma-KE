@@ -9,7 +9,6 @@ const ResponseContainer = require("../../models/ResponseContainer");
  */
 
 const postUser = async (requestData) => {
-    console.log(requestData);
     const db = connection.getDb();
 
     // Get raw user request data.
@@ -26,8 +25,10 @@ const postUser = async (requestData) => {
         return new ResponseContainer(400, {error: "A user with that email already exists"});
     }
 
-    if (user.password !== user.confirmPassword) {
-        return new ResponseContainer(400, {error: "Passwords Don't Match"});
+    if (user.confirmPassword) {
+        if (user.password !== user.confirmPassword) {
+            return new ResponseContainer(400, {error: "Passwords Don't Match"});
+        }    
     }
 
     // Store the user.

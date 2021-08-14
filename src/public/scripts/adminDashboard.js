@@ -105,16 +105,16 @@ users.preloadData = () => {
             });
 
             pageButtons(data.pages);
-        }
 
-        document.querySelectorAll(".btn.view").forEach((el) => {
-            el.addEventListener("click", (event) => {
-                if (event.target) {
-                    console.log(event.target.id);
-                    window.location = `/admin/user/action?id=${event.target.id}`;
-                }
+            document.querySelectorAll(".btn.view").forEach((el) => {
+                el.addEventListener("click", (event) => {
+                    if (event.target) {
+                        console.log(event.target.id);
+                        window.location = `/admin/user/action?id=${event.target.id}`;
+                    }
+                });
             });
-        });
+        }
 
         document.getElementById("create-user").addEventListener("click", (event) => {
             window.location = "/admin/user/add";
