@@ -5,6 +5,11 @@
 // Dependencies.
 const server = require("./src/server");
 const mongoDB = require("./src/db");
+const os = require("os");
+
+console.log(os.cpus());
+console.log(os.totalmem());
+console.log(os.freemem())
 
 // Declare the app.
 const app = {};
