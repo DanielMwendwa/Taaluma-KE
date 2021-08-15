@@ -78,7 +78,6 @@ const adminSideBar = `<div class="navigation">
                 <span class="title">School Performance</span>
             </a>
         </li>
-
     </ul>
 </div>`;
 body.insertAdjacentHTML("beforeend", adminSideBar)
