@@ -28,7 +28,10 @@ career.preloadData = () => {
 
         const itemElement = document.createElement("div");
         itemElement.innerHTML = `
-        <h1>${title}</h1>
+        <div style="display: flex; justify-content: space-between;">
+            <h1>${title}</h1>
+            <button class="btn">Add to Favourites</button> 
+        </div>
         <div class="blog-post">
             <h2 class="title">Description</h2>
             <p class="text">${desc}</p>
@@ -44,7 +47,16 @@ career.preloadData = () => {
         <div class="blog-post">
             <h2 class="title">Work Activities</h2>
             <ul id="act"></ul>
-        </div>`;
+        </div>
+        <div class="blog-post">
+            <h2 class="title">Careers Starters</h2>
+            <ul id=""></ul>
+        </div>
+        <div class="blog-post">
+            <h2 class="title">Careers Changers</h2>
+            <ul id=""></ul>
+        </div>
+        `;
         careerContainer.appendChild(itemElement);
 
         const altContainer = document.getElementById("alt");
