@@ -1,5 +1,6 @@
 // Dependencies.
 const connection = require("../../db");
+const filterByReference = require("../../lib/filters");
 const ResponseContainer = require("../../models/ResponseContainer");
 
 /**
@@ -11,19 +12,20 @@ const postPerformance = async (requestData) => {
     const db = connection.getDb();
 
     // Get raw user request data.
-    const performance = JSON.parse(requestData.payload);
+    let performance = JSON.parse(requestData.payload);
 
-    // // Make sure that the user doesn't already exists.
-    // let userData;
-    // try {
-    //     userData = await db.collection("users").findOne({ email: user.email });
-    // } catch (e) {
-    //     console.error(e);
-    // }
+    let foundItems = [];
+    for (let i = 0; i < performance.length; i++) {
+        let perfData = await db.collection("performance").findOne({ index: performance[i].index });
+        if (perfData) {
+            foundItems.push(perfData);
+        }
+    }
 
-    // if (userData) {
-    //     return new ResponseContainer(400, { error: "A user with that email already exists" });
-    // }
+    performance = filterByReference(performance, foundItems)
+    if (performance.length == 0) {
+        return new ResponseContainer(400, { error: "No data to update" });
+    }
 
     try {
         await db.collection("performance").insertMany(performance);
