@@ -102,7 +102,7 @@ users.preloadData = () => {
                     <td>${item.email}</td>
                     <td><button class="btn approve" id="${item.email}-approve">Approve</button></td>
                     <td><button class="btn reject" id="${item.email}-reject">Reject</button></td>
-                    <td><button hidden class="btn view" id="${item.email}-view">View Results</button></td>`;
+                    <td><button hidden class="btn view" id="${item.school_code}-view">View Results</button></td>`;
                 table.appendChild(row);
 
                 queryStringObject = { email: item.email };
@@ -112,7 +112,7 @@ users.preloadData = () => {
                         if (statusCode === 200) {
                             let btn = document.getElementById(`${item.email}-approve`);
                             let btn2 = document.getElementById(`${item.email}-reject`);
-                            let btn3 = document.getElementById(`${item.email}-view`);
+                            let btn3 = document.getElementById(`${item.school_code}-view`);
                             btn.style.display = "none";
                             btn2.style.display = "none";
                             btn3.removeAttribute("hidden");

@@ -4,30 +4,13 @@
     <div class="main">
         <div class="topbar">
             <div class="toggle" onClick="toggleMenu();">
-                <img width="30px" height="30px" src="/public/icons/bars-solid.png">
+                <img width="30px" height="30px" src="/public/icons/bars-solid.png" />
             </div>
             <h2>School Performance</h2>
             <button id="create-user" class="btn new">Create New User</button>
         </div>
-
         <div class="details">
-            <div class="cardBody">
-                <table id="users-table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Email</th>
-                            <th>Name</th>
-                            <th>Index Number</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="users-table-body"></tbody>
-                </table>
-
-                <div class="container-sect">
-                    <div id="pagination-wrapper"></div>
-                </div>
+            <div class="cardBody" id="perf-details" style="min-width: 70%; margin: 0 auto;">
             </div>
         </div>
     </div>
@@ -35,4 +18,4 @@
 
 <!-- Load page specific JavaScript -->
 <script type="text/javascript" src="/public/utils/adminDashboard.js"></script>
-<!-- <script type="text/javascript" src="/public/scripts/adminDashboard.js"></script> -->
+<script type="text/javascript" src="/public/scripts/adminDashboardSchoolResults.js"></script>
