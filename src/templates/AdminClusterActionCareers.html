@@ -1,30 +1,25 @@
 <link rel="stylesheet" href="/public/styles/adminDashboard.css" />
 <section>
     <div class="container" id="admin-sidebar"></div>
-
     <div class="main">
         <div class="topbar">
             <div class="toggle" onClick="toggleMenu();">
                 <img width="30px" height="30px" src="/public/icons/bars-solid.png">
             </div>
-            <h2>Schools Accounts</h2>
-            <div></div>
+            <h2 id="page-heading"></h2>
+            <button id="create-user" class="btn new">Create New User</button>
         </div>
 
         <div class="details">
             <div class="cardBody">
-                <table id="users-table">
+                <table id="career-table">
                     <thead>
                         <tr>
                             <th></th>
-                            <th>School</th>
-                            <th>Email</th>
-                            <th>Action</th>
-                            <th>Action</th>
-                            <th>Action</th>
+                            <th>Careers</th>
                         </tr>
                     </thead>
-                    <tbody id="users-table-body"></tbody>
+                    <tbody id="career-table-body"></tbody>
                 </table>
 
                 <div class="container-sect">
@@ -37,4 +32,4 @@
 
 <!-- Load page specific JavaScript -->
 <script type="text/javascript" src="/public/utils/adminDashboard.js"></script>
-<script type="text/javascript" src="/public/scripts/adminDashboardSchool.js"></script>
+<script type="text/javascript" src="/public/scripts/adminClusterActionCareers.js"></script>

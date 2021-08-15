@@ -59,12 +59,21 @@ cluster.preloadData = () => {
                         </tr>
                         <tr>
                             <td>Careers</td>
-                            <td><button class="view-btn">View careers</button></td>
+                            <td><button class="btn view" id="${cluster}">View careers</button></td>
                         </tr>
                     </thead>
                     <tbody id="cluster-careers-table-body"></tbody>
                 </table>`;
             careers_table.appendChild(newDiv);
+
+            document.querySelectorAll(".btn.view").forEach((el) => {
+                el.addEventListener("click", (event) => {
+                    if (event.target) {
+                        console.log(event.target.id);
+                        window.location = `/admin/cluster/action/careers?cluster=${event.target.id}`;
+                    }
+                });
+            });
         });
     })
 };

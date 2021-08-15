@@ -185,16 +185,28 @@ router.routes = {
         controller: templateController,
         data: { "head.title": "Dashboard" },
     },
+
     "admin/career/add/act": {
         controller: templateController,
         data: { "head.title": "Dashboard" },
     },
+
     "admin/career/add/edu": {
         controller: templateController,
         data: { "head.title": "Dashboard" },
     },
 
     "admin/cluster/action": {
+        controller: templateController,
+        data: { "head.title": "Dashboard" },
+    },
+
+    "admin/cluster/action/careers": {
+        controller: templateController,
+        data: { "head.title": "Dashboard" },
+    },
+
+    "admin/dashboard/schools/results": {
         controller: templateController,
         data: { "head.title": "Dashboard" },
     },
