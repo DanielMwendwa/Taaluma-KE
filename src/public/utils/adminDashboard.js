@@ -62,14 +62,6 @@ const adminSideBar = `<div class="navigation">
                 <span class="title">System Report</span>
             </a>
         </li>
-        <li>
-            <a href="/admin/sys/report">
-                <span class="icon">
-                    <img width="30px" height="30px" src="/public/icons/poll-solid.png">
-                </span>
-                <span class="title">School Performance</span>
-            </a>
-        </li>
     </ul>
 </div>`;
 body.insertAdjacentHTML("beforeend", adminSideBar)
