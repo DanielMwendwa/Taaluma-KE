@@ -159,9 +159,9 @@ users.preloadData = () => {
 
             document.querySelectorAll(".btn.view").forEach(el => {
                 el.addEventListener("click", event => {
-                    let email = event.target.id.split("-")[0];
-                    queryStringObject = { email };
-                    window.location = "/admin/dashboard/schools/results";
+                    let school_code = event.target.id.split("-")[0];
+                    queryStringObject = { school_code };
+                    window.location = `/admin/dashboard/schools/results?school_code=${school_code}`;
                 })
             })
         }
