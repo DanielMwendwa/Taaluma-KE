@@ -47,6 +47,14 @@ const adminSideBar = `<div class="navigation">
             </a>
         </li>
         <li>
+            <a href="/admin/sys/report">
+                <span class="icon">
+                    <img width="30px" height="30px" src="/public/icons/poll-solid.png">
+                </span>
+                <span class="title">Career Matrix</span>
+            </a>
+        </li>
+        <li>
             <a href="/admin/dashboard/schools">
                 <span class="icon">
                     <img width="30px" height="30px" src="/public/icons/school-solid.png">
