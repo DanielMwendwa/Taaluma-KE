@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/public/styles/accordion.css" />
 <section>
     <div class="profile-page">
         <div class="container" style="align-self: flex-start; margin-top: 20px">
@@ -12,8 +13,8 @@
                             <td>Year</td>
                             <td>Index</td>
                             <td>Grade</td>
-                            <td>101</td>
-                            <td>102</td>
+                            <td>ENG</td>
+                            <td>KIS</td>
                             <td>...</td>
                         </tr>
                         <tr>
@@ -34,9 +35,52 @@
         <input class="upload-btn" type="button" id="upload" value="upload" onclick="upload()" />
     </div>
     <div id="dvCSV"></div>
+
+    <div class="accordion-container">
+        <p>Use the Subjects Abbreviations as table headers</p>
+        <button class="accordion">Subjects Abbreviations</button>
+        <div class="panel">
+            <ol>
+                <li>English <strong>(ENG)</strong></li>
+                <li>Kiswahili <strong>(KIS)</strong></li>
+                <li>Mathematics <strong>(MAT)</strong></li>
+                <li>Biology <strong>(BIO)</strong></li>
+                <li>Physics <strong>(PHY)</strong></li>
+                <li>Chemistry <strong>(CHE)</strong></li>
+                <li>General Science <strong>(GSC)</strong></li>
+                <li>History <strong>(HAG)</strong></li>
+                <li>Geography <strong>(GEO)</strong></li>
+                <li>CRE <strong>(CRE)</strong></li>
+                <li>IRE <strong>(IRE)</strong></li>
+                <li>HRE <strong>(HRE)</strong></li>
+                <li>Home Science <strong>(HSC)</strong></li>
+                <li>Art and Design <strong>(ARD)</strong></li>
+                <li>Agriculture <strong>(AGR)</strong></li>
+                <li>Wood Work <strong>(WW)</strong></li>
+                <li>Metal Work <strong>(MW)</strong></li>
+                <li>Building Construction <strong>(BC)</strong></li>
+                <li>Power Mechanics <strong>(PM)</strong></li>
+                <li>Electricity <strong>(ECT)</strong></li>
+                <li>Drawing and Design <strong>(DRD)</strong></li>
+                <li>Aviation Technology <strong>(AVT)</strong></li>
+                <li>Computer Studies <strong>(CMP)</strong></li>
+                <li>French <strong>(FRE)</strong></li>
+                <li>German <strong>(GER)</strong></li>
+                <li>Arabic <strong>(ARB)</strong></li>
+                <li>Sign Language <strong>(KSL)</strong></li>
+                <li>Music <strong>(MUC)</strong></li>
+                <li>Business Studies <strong>(BST)</strong></li>
+            </ol>
+        </div>
+    </div>
 </section>
 
 <style>
+    .accordion-container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
     table {
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         border-spacing: 0;
@@ -167,3 +211,4 @@
 <!-- Load page specific JavaScript -->
 <!-- <script src="/public/scripts/userAccountEdit.js"></script> -->
 <script src="/public/utils/uploadCsv.js"></script>
+<script src="/public/utils/accordion.js"></script>
