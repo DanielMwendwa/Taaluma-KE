@@ -13,13 +13,13 @@ userAccountEdit.preloadData = () => {
     }
 
     // Fetch the user data
-    const queryStringObject = { email };
+    let queryStringObject = { email };
     httpClient
         .request({ headers: { token: token._id }, path: "/api/users", method: "GET", queryStringObject })
         .then(({ statusCode, responsePayload }) => {
-            console.log(statusCode)
+            console.log(statusCode);
             if (statusCode === 200) {
-                console.log(responsePayload)
+                console.log(responsePayload);
                 // Put the data into the forms as values where needed
                 document.querySelector("#userAccountEdit input[name=email]").value = responsePayload.email;
                 document.querySelector("#userAccountEdit input[name=name]").value = responsePayload.name;
@@ -30,6 +30,78 @@ userAccountEdit.preloadData = () => {
                     window.location = "/";
                 });
             }
+
+            queryStringObject = { index: responsePayload.indexNumber };
+            const requestPayload = { path: "/api/performance", method: "GET", queryStringObject };
+
+            // Fetch the menu data.
+            httpClient.request(requestPayload).then(({ statusCode, responsePayload }) => {
+                console.log(responsePayload);
+
+                let performances = [];
+                responsePayload.forEach((data) => {
+                    let propertyNames = Object.keys(data);
+                    let propertyValues = Object.values(data);
+                    let entries = Object.entries(data);
+                    performances.push(entries);
+                });
+
+                const subjects = {
+                    ENG: "English",
+                    KIS: "Kiswahili",
+                    MAT: "Mathematics",
+                    BIO: "Biology",
+                    PHY: "Physics",
+                    CHE: "Chemistry",
+                    GSC: "General Science",
+                    HAG: "History",
+                    GEO: "Geography",
+                    CRE: "CRE",
+                    IRE: "IRE",
+                    HRE: "HRE",
+                    HSC: "Home Science",
+                    ARD: "Art and Design",
+                    AGR: "Agriculture",
+                    WW: "Wood Work",
+                    MW: "Metal Work",
+                    BC: "Building Construction",
+                    PM: "Power Mechanics",
+                    ECT: "Electricity",
+                    DRD: "Drawing and Design",
+                    AVT: "Aviation Technology",
+                    CMP: "Computer Studies",
+                    FRE: "French",
+                    GER: "German",
+                    ARB: "Arabic",
+                    KSL: "Sign Language",
+                    MUC: "Music",
+                    BST: "Business Studies",
+                };
+
+                const studentDetails = {
+                    index: "Index Number",
+                    grade: "Grade",
+                    year: "KCSE Year",
+                };
+
+                const performanceColumn = { ...subjects, ...studentDetails };
+                let container = document.getElementById("perf-details");
+                performances.forEach((res) => {
+                    let table = document.createElement("table");
+                    let row;
+                    table.style.padding = "20px";
+                    table.style.border = "2px solid black";
+                    table.style.margin = "2px";
+                    res.forEach((el) => {
+                        row = document.createElement("tr");
+                        row.innerHTML = `
+                        <td>${performanceColumn[el[0]]}</td>
+                        <td>${el[1]}</td>`;
+                        table.appendChild(row);
+                    });
+                    container.appendChild(table);
+                });
+            });
         });
 };
 

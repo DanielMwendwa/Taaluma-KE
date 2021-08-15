@@ -8,11 +8,15 @@ const ResponseContainer = require("../../models/ResponseContainer");
  * @return {Promise}
  */
 const getPerformance = async (requestData) => {
-    const db = connection.getDb();  
+    const db = connection.getDb();
     let query = { index: new RegExp(requestData.queryStringObject.school_code) };
 
+    if (requestData.queryStringObject.index) {
+        query = { index: requestData.queryStringObject.index };
+    }
+
     // Lookup the performances.
-    const projection = { _id: 0}
+    const projection = { _id: 0 };
     let performance;
     try {
         cursor = await db.collection("performance").find(query).project(projection);
