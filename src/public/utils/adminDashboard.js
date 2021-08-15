@@ -55,14 +55,6 @@ const adminSideBar = `<div class="navigation">
             </a>
         </li>
         <li>
-            <a href="/admin/dashboard/courses">
-                <span class="icon">
-                    <img width="30px" height="30px" src="/public/icons/book-reader-solid.png">
-                </span>
-                <span class="title">Course</span>
-            </a>
-        </li>
-        <li>
             <a href="/admin/sys/report">
                 <span class="icon">
                     <img width="30px" height="30px" src="/public/icons/server-solid.png">
