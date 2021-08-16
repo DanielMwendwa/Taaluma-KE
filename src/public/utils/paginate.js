@@ -13,6 +13,7 @@
  *
  * paginate.init ('. myTable', options, filterOptions);
  **/
+//  The Window interface represents a window containing a DOM document; the document property points to the DOM document loaded in that window.
 (function (window) {
     // Function-level strict mode syntax
     "use strict"; // a way to opt in to a restricted variant of JavaScript
