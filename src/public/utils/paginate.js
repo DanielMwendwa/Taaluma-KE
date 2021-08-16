@@ -18,20 +18,20 @@
     "use strict"; // a way to opt in to a restricted variant of JavaScript
 
     // This function will contain all our code
-    function lignePaginate() {
-        var _lignePaginate = {};
+    function linePaginate() {
+        var _linePaginate = {};
 
         /**
          * Initialize all settings and validations before executing
          * paging and filter (if assigned)
          **/
-        _lignePaginate.init = function (
+        _linePaginate.init = function (
             el,
             options = { numberPerPage: 10, goBar: false, pageCounter: true },
             filter = [{ el: null }]
         ) {
             setTableEl(el);
-            initTable(_lignePaginate.getEl());
+            initTable(_linePaginate.getEl());
             checkIsTableNull();
             setOptions(options);
             setConstNumberPerPage(options.numberPerPage);
@@ -118,17 +118,17 @@
          * Getters public
          **/
 
-        _lignePaginate.getEl = function () {
+        _linePaginate.getEl = function () {
             return settings.el;
         };
-        _lignePaginate.getTable = function () {
+        _linePaginate.getTable = function () {
             return settings.table;
         };
-        _lignePaginate.getNumberPerPage = function () {
+        _linePaginate.getNumberPerPage = function () {
             return settings.numberPerPage;
         };
 
-        _lignePaginate.getConstNumberPerPage = function () {
+        _linePaginate.getConstNumberPerPage = function () {
             return settings.constNumberPerPage;
         };
 
@@ -154,13 +154,13 @@
 
         var checkIsTableNull = function () {
             if (settings.table == null) {
-                throw new Error("Element " + _lignePaginate.getEl() + " no exits");
+                throw new Error("Element " + _linePaginate.getEl() + " no exits");
             }
         };
 
         var checkIsFilterBoxNull = function () {
             if (filterSettings.filterBox == null) {
-                throw new Error("Element " + _lignePaginate.getEl() + " no exits");
+                throw new Error("Element " + _linePaginate.getEl() + " no exits");
             }
         };
 
@@ -286,9 +286,9 @@
          * Public Methods
          **/
 
-        _lignePaginate.goToPage = function () {
+        _linePaginate.goToPage = function () {
             let page = document.getElementById("paginate_page_to_go").value;
-            _lignePaginate.sort(page);
+            _linePaginate.sort(page);
         };
 
         var launchPaginate = function () {
@@ -315,13 +315,13 @@
                 // Container for the "paginate_controls" buttons
                 table.insertAdjacentHTML("afterend", "<div id='buttons' class='paginate paginate_controls'></div");
                 // Initializing the table on page 1
-                _lignePaginate.sort(1);
+                _linePaginate.sort(1);
             } else {
                 settings.hasPagination = false;
             }
         };
 
-        _lignePaginate.sort = function (selectedPageNumber) {
+        _linePaginate.sort = function (selectedPageNumber) {
             /** create (rows) a variable to hold the group of rows
              * to be displayed on the selected page,
              * startPoint: the first row on each page, Do The Math
@@ -345,10 +345,10 @@
          * also calls the method that hides the button part of the
          * pagination
          **/
-        _lignePaginate.filter = function () {
+        _linePaginate.filter = function () {
             if (settings.hasPagination) {
                 setNumberPerPage(9999);
-                _lignePaginate.sort(1);
+                _linePaginate.sort(1);
                 hiddenPaginateControls();
             }
             const filter = document.querySelector(filterSettings.el).value.toUpperCase();
@@ -361,16 +361,16 @@
             );
 
             if (filter.length == 0 && settings.hasPagination) {
-                setNumberPerPage(_lignePaginate.getConstNumberPerPage());
-                _lignePaginate.sort(1);
+                setNumberPerPage(_linePaginate.getConstNumberPerPage());
+                _linePaginate.sort(1);
                 showPaginatecontrols();
             }
         };
 
-        return _lignePaginate;
+        return _linePaginate;
     }
 
     if (typeof window.paginate === "undefined") {
-        window.paginate = lignePaginate();
+        window.paginate = linePaginate();
     }
 })(window);
