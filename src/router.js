@@ -23,6 +23,7 @@ const altTitleController = require("./controllers/altTitleController");
 const eduController = require("./controllers/eduController");
 const actController = require("./controllers/actController");
 const coursesController = require("./controllers/coursesController");
+const favController = require("./controllers/favController");
 
 // Create module container.
 const router = {};
@@ -100,6 +101,10 @@ router.routes = {
 
     "api/act": {
         controller: actController,
+    },
+
+    "api/fav": {
+        controller: favController,
     },
 
     // Front-End specific routes.

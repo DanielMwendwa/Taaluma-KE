@@ -30,7 +30,7 @@ career.preloadData = () => {
         itemElement.innerHTML = `
         <div style="display: flex; justify-content: space-between;">
             <h1>${title}</h1>
-            <button class="btn">Add to Favourites</button> 
+            <button class="btn btn-fav">Add to Favourites</button> 
         </div>
         <div class="blog-post">
             <h2 class="title">Description</h2>

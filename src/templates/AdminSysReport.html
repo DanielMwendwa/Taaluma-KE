@@ -5,7 +5,7 @@
     <div class="main">
         <div class="topbar">
             <div class="toggle" onClick="toggleMenu();">
-                <img width="30px" height="30px" src="/public/icons/bars-solid.png">
+                <img width="30px" height="30px" src="/public/icons/bars-solid.png" />
             </div>
             <h2>System Report</h2>
             <div></div>
@@ -13,24 +13,146 @@
 
         <div class="details">
             <div class="cardBody">
-                <table id="clusters-table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Title</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="clusters-table-body"></tbody>
-                </table>
-
-                <div class="container-sect">
-                    <div id="pagination-wrapper"></div>
+                <!-- <h1>sys</h1> -->
+                <div class="sys-container">
+                    <div class="sys highlight">
+                        <h4>Sole Proprietor</h4>
+                        <h1>$19.99</h1>
+                        <small>per month</small>
+                        <ul>
+                            <li>100 invoices</li>
+                            <li>Custom scripting & scheduling</li>
+                            <li>Payment & accounting software integration</li>
+                        </ul>
+                    </div>
+                    <div class="sys highlight">
+                        <h4>Small Business</h4>
+                        <small class="green">Most Popular</small>
+                        <h1>$49.99</h1>
+                        <small>per month</small>
+                        <ul>
+                            <li>300 invoices</li>
+                            <li>Custom scripting & scheduling</li>
+                            <li>Payment & accounting software integration</li>
+                        </ul>
+                    </div>
+                    <div class="sys highlight">
+                        <h4>Enterprise</h4>
+                        <h1>$99.99</h1>
+                        <small>per month</small>
+                        <ul>
+                            <li>500 invoices</li>
+                            <li>Custom scripting & scheduling</li>
+                            <li>Payment & accounting software integration</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="sys-container">
+                    <div class="sys highlight">
+                        <h4>Sole Proprietor</h4>
+                        <h1>$19.99</h1>
+                        <small>per month</small>
+                        <ul>
+                            <li>100 invoices</li>
+                            <li>Custom scripting & scheduling</li>
+                            <li>Payment & accounting software integration</li>
+                        </ul>
+                    </div>
+                    <div class="sys highlight">
+                        <h4>Small Business</h4>
+                        <small class="green">Most Popular</small>
+                        <h1>$49.99</h1>
+                        <small>per month</small>
+                        <ul>
+                            <li>300 invoices</li>
+                            <li>Custom scripting & scheduling</li>
+                            <li>Payment & accounting software integration</li>
+                        </ul>
+                    </div>
+                    <div class="sys highlight">
+                        <h4>Enterprise</h4>
+                        <h1>$99.99</h1>
+                        <small>per month</small>
+                        <ul>
+                            <li>500 invoices</li>
+                            <li>Custom scripting & scheduling</li>
+                            <li>Payment & accounting software integration</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<style>
+    h1 {
+        letter-spacing: 1px;
+    }
+
+    .sys-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sys {
+        background-color: #fff;
+        border: 1px solid #eee;
+        margin: 10px;
+        /* margin: .5px; */
+        text-align: center;
+    }
+
+    .sys.highlight {
+        border-top: 2px solid #50bc01;
+        box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sys h1 {
+        color: #5caefe;
+        margin: 30px 0 0;
+    }
+
+    .sys h4 {
+        margin: 20px 0 0;
+    }
+
+    .sys small.green {
+        color: #50bc01;
+        margin: 0;
+    }
+
+    .sys small.green + h1 {
+        margin-top: 10px;
+    }
+
+    .sys small {
+        color: #777;
+    }
+
+    .sys ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 40px 0;
+    }
+
+    .sys ul li {
+        margin: 20px 30px;
+        /* max-width: 250px; */
+        max-width: 230px;
+    }
+
+    .sys button {
+        background-color: #5caefe;
+        border: 0;
+        border-radius: 2px;
+        color: #fff;
+        padding: 12px 20px;
+        margin-bottom: 30px;
+    }
+</style>
 
 <!-- Load page specific JavaScript -->
 <script type="text/javascript" src="/public/utils/adminDashboard.js"></script>
