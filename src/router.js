@@ -24,6 +24,7 @@ const eduController = require("./controllers/eduController");
 const actController = require("./controllers/actController");
 const coursesController = require("./controllers/coursesController");
 const favController = require("./controllers/favController");
+const logsController = require("./controllers/logsController");
 
 // Create module container.
 const router = {};
@@ -73,6 +74,10 @@ router.routes = {
 
     "api/industries": {
         controller: industriesController,
+    },
+
+    "api/logs": {
+        controller: logsController,
     },
 
     "api/industry": {
@@ -274,6 +279,11 @@ router.routes = {
     "admin/sys/report": {
         controller: templateController,
         data: { "head.title": "System Report" },
+    },
+
+    "admin/sys/logs": {
+        controller: templateController,
+        data: { "head.title": "System Logs" },
     },
 
     "course/careers": {

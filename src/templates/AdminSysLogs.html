@@ -1,0 +1,245 @@
+<link rel="stylesheet" href="/public/styles/paginate.css" />
+<link rel="stylesheet" href="/public/styles/adminDashboard.css" />
+<section>
+    <div class="container" id="admin-sidebar"></div>
+
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle" onClick="toggleMenu();">
+                <img width="30px" height="30px" src="/public/icons/bars-solid.png" />
+            </div>
+            <h2>System Logs</h2>
+            <div></div>
+        </div>
+
+        <div class="details">
+            <div class="cardBody">
+                <div class="panel">
+                    <div class="body">
+                        <div class="input-group">
+                            <input type="search" id="searchBox" placeholder="Filter..." />
+                        </div>
+                    </div>
+                </div>
+                <table class="myTable" id="logs-search-table">
+                    <tbody>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>IP Address</th>
+                            <th>User</th>
+                            <th>Event</th>
+                            <th>Http Method</th>
+                            <th>Route</th>
+                            <th>Status code</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Muli:300,600&display=swap");
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .input-group {
+        width: 450px;
+    }
+
+    #searchBox {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+
+    #searchBox:focus {
+        outline: none;
+    }
+
+    a {
+        color: #3498db;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+</style>
+
+<!-- Load page specific JavaScript -->
+<script src="/public/utils/paginate.js"></script>
+<script type="text/javascript" src="/public/utils/adminDashboard.js"></script>
+<script src="/public/scripts/adminSysLogs.js"></script>
+
+<!-- <tr>
+    <th>Timestamp</th>
+    <th>IP Address</th>
+    <th>User</th>
+    <th>Event</th>
+    <th>Http Method</th>
+    <th>Route</th>
+    <th>Status code</th>
+</tr>
+<tr style="color: green">
+    <td>2018-11-12 12:00:34</td>
+    <td>192.0.2.1</td>
+    <td>daniel@gmail.com</td>
+    <td>User Login</td>
+    <td>GET</td>
+    <td>/api/user</td>
+    <td>200</td>
+</tr>
+<tr style="color: orange">
+    <td>2018-11-12 12:01:34</td>
+    <td>192.0.2.1</td>
+    <td>daniel@gmail.com</td>
+    <td>Generate Session Token</td>
+    <td>POST</td>
+    <td>/api/user</td>
+    <td>201</td>
+</tr>
+<tr style="color: green">
+    <td>2018-11-12 12:02:34</td>
+    <td>192.0.2.1</td>
+    <td>daniel@gmail.com</td>
+    <td>Display User Dashboard</td>
+    <td>GET</td>
+    <td>user/dashboard</td>
+    <td>200</td>
+</tr>
+<tr style="color: green">
+    <td>2018-11-12 12:12:34</td>
+    <td>192.0.2.1</td>
+    <td>daniel@gmail.com</td>
+    <td>Display Careers</td>
+    <td>GET</td>
+    <td>user/careers</td>
+    <td>200</td>
+</tr>
+<tr style="color: green">
+    <td>2018-11-12 12:00:34</td>
+    <td>192.0.2.1</td>
+    <td>daniel@gmail.com</td>
+    <td>Display Career Info</td>
+    <td>GET</td>
+    <td>/api/career/1034343</td>
+    <td>200</td>
+</tr>
+<tr style="color: orange">
+    <td>2018-11-12 12:00:34</td>
+    <td>192.0.2.1</td>
+    <td>daniel@gmail.com</td>
+    <td>Add Career to favourite</td>
+    <td>POST</td>
+    <td>/api/favourite/1034343</td>
+    <td>201</td>
+</tr>
+<tr style="color: green">
+    <td>2018-11-12 12:02:34</td>
+    <td>192.0.2.1</td>
+    <td>daniel@gmail.com</td>
+    <td>Display User Dashboard</td>
+    <td>GET</td>
+    <td>user/dashboard</td>
+    <td>200</td>
+</tr>
+<tr style="color: green">
+    <td>2018-11-12 12:00:34</td>
+    <td>192.0.2.1</td>
+    <td>daniel@gmail.com</td>
+    <td>Display Admin Dashboard</td>
+    <td>GET</td>
+    <td>/api/user</td>
+    <td>200</td>
+</tr>
+<tr style="color: green">
+    <td>2018-11-12 12:00:34</td>
+    <td>192.0.2.1</td>
+    <td>daniel@gmail.com</td>
+    <td>Display Users</td>
+    <td>GET</td>
+    <td>/api/users</td>
+    <td>200</td>
+</tr>
+<tr style="color: red">
+    <td>2018-11-12 12:00:34</td>
+    <td>192.0.2.1</td>
+    <td>daniel@gmail.com</td>
+    <td>Add User</td>
+    <td>POST</td>
+    <td>/api/user</td>
+    <td>400</td>
+</tr>
+<tr style="color: green">
+    <td>2018-11-12 12:00:34</td>
+    <td>192.0.2.1</td>
+    <td>daniel@gmail.com</td>
+    <td>Display Users</td>
+    <td>GET</td>
+    <td>/api/users</td>
+    <td>200</td>
+</tr>
+<tr style="color: green">
+    <td>2018-11-12 12:00:34</td>
+    <td>192.0.2.1</td>
+    <td>daniel@gmail.com</td>
+    <td>Delete User</td>
+    <td>DELETE</td>
+    <td>/api/users</td>
+    <td>200</td>
+</tr>
+<tr style="color: red">
+    <td>2018-11-12 12:00:34</td>
+    <td>192.0.2.1</td>
+    <td>daniel@gmail.com</td>
+    <td>User Login</td>
+    <td>GET</td>
+    <td>/api/user</td>
+    <td>400</td>
+</tr>
+<tr style="color: green">
+    <td>2018-11-12 12:00:34</td>
+    <td>192.0.2.1</td>
+    <td>daniel@gmail.com</td>
+    <td>User Login</td>
+    <td>GET</td>
+    <td>/api/user</td>
+    <td>200</td>
+</tr>
+<tr style="color: green">
+    <td>2018-11-12 12:00:34</td>
+    <td>192.0.2.1</td>
+    <td>daniel@gmail.com</td>
+    <td>User Login</td>
+    <td>GET</td>
+    <td>/api/user</td>
+    <td>200</td>
+</tr>
+<tr style="color: green">
+    <td>2018-11-12 12:00:34</td>
+    <td>192.0.2.1</td>
+    <td>daniel@gmail.com</td>
+    <td>User Login</td>
+    <td>GET</td>
+    <td>/api/user</td>
+    <td>200</td>
+</tr>
+<tr style="color: green">
+    <td>2018-11-12 12:00:34</td>
+    <td>192.0.2.1</td>
+    <td>daniel@gmail.com</td>
+    <td>User Login</td>
+    <td>GET</td>
+    <td>/api/user</td>
+    <td>200</td>
+</tr> -->

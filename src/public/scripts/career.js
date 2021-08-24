@@ -48,14 +48,6 @@ career.preloadData = () => {
             <h2 class="title">Work Activities</h2>
             <ul id="act"></ul>
         </div>
-        <div class="blog-post">
-            <h2 class="title">Careers Starters</h2>
-            <ul id=""></ul>
-        </div>
-        <div class="blog-post">
-            <h2 class="title">Careers Changers</h2>
-            <ul id=""></ul>
-        </div>
         `;
         careerContainer.appendChild(itemElement);
 

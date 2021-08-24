@@ -25,7 +25,7 @@ const postToken = async (requestData) => {
     // Lookup the user who matches that email address.
     let userData;
     try {
-        userData = await db.collection("users").findOne({email: token.email})
+        userData = await db.collection("users").findOne({ email: token.email });
     } catch (e) {
         console.error(e);
     }

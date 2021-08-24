@@ -51,7 +51,7 @@ const adminSideBar = `<div class="navigation">
                 <span class="icon">
                     <img width="30px" height="30px" src="/public/icons/school-solid.png">
                 </span>
-                <span class="title">Schools Requests</span>
+                <span class="title">Schools</span>
             </a>
         </li>
         <li>
@@ -60,6 +60,14 @@ const adminSideBar = `<div class="navigation">
                     <img width="30px" height="30px" src="/public/icons/server-solid.png">
                 </span>
                 <span class="title">System Report</span>
+            </a>
+        </li>
+        <li>
+            <a href="/admin/sys/logs">
+                <span class="icon">
+                    <img width="30px" height="30px" src="/public/icons/history-solid.png">
+                </span>
+                <span class="title">System Logs</span>
             </a>
         </li>
     </ul>

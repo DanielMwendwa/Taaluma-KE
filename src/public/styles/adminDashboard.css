@@ -227,12 +227,12 @@ table tr td:nth-of-type(5) {
     margin: 1px;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     table tr *:nth-of-type(4),
     table tr *:nth-of-type(5) {
         display: none;
     }
-}
+} */
 
 @media screen and (max-width: 550px) {
     body {
@@ -240,7 +240,7 @@ table tr td:nth-of-type(5) {
     }
 
     table tr *:nth-of-type(6) {
-        display: none;
+        /* display: none; */
     }
 }
 

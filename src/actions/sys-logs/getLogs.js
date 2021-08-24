@@ -3,14 +3,14 @@ const connection = require("../../db");
 const ResponseContainer = require("../../models/ResponseContainer");
 
 /**
- * Get system resport info.
+ * Get logs info.
  * @param {RequestData} requestData
  * @return {Promise}
  */
-const getSystemReport = async (requestData) => {
+const getLogs = async (requestData) => {
     const db = connection.getDb();
 
-    // Lookup the report.
+    // Lookup the logs.
     let logs;
     let projection = { _id: 0 };
     try {
@@ -24,4 +24,4 @@ const getSystemReport = async (requestData) => {
 };
 
 // Export module.
-module.exports = getSystemReport;
+module.exports = getLogs;
