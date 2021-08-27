@@ -7,6 +7,8 @@ const ResponseContainer = require("../../models/ResponseContainer");
  * @param {RequestData} requestData
  * @return {Promise}
  */
+
+/* The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains. */
 const getUser = async (requestData) => {
     const db = connection.getDb();
 

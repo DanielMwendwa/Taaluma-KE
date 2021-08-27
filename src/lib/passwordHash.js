@@ -9,6 +9,7 @@ const config = require("../config");
  */
 const passwordHash = (passwordString) => {
     if (typeof passwordString === "string" && passwordString.length) {
+        // message digest is a cryptographic hash function containing a string of digits created by a one-way hashing formula
         return crypto.createHmac("sha256", config.hashingSecret).update(passwordString).digest("hex");
     } else {
         return null;
