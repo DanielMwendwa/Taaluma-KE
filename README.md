@@ -1,4 +1,8 @@
 # Taaluma-KE
+Student Performance & Career Guidance System
+
+### Requirements
+
 node v14.16.1
 
 
