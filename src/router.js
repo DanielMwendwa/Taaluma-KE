@@ -290,6 +290,11 @@ router.routes = {
         controller: templateController,
         data: { "head.title": "Careers based on course" },
     },
+
+    "my/courses": {
+        controller: templateController,
+        data: { "head.title": "Careers based on course" },
+    }
 };
 
 // Define notFound (404) controller.

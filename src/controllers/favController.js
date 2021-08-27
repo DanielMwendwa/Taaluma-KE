@@ -3,6 +3,7 @@
  */
 
 // Dependencies.
+const getFav = require("../actions/fav/getFav");
 const postFav = require("../actions/fav/postFav");
 const deleteFav = require("../actions/fav/deleteFav");
 const ResponseContainer = require("../models/ResponseContainer");
@@ -14,6 +15,9 @@ const ResponseContainer = require("../models/ResponseContainer");
  */
 favController = async (requestData) => {
     switch (requestData.method) {
+        case "get":
+            return await getFav(requestData);
+
         case "post":
             return await postFav(requestData);
         

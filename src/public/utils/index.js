@@ -5,26 +5,26 @@ const textEl = document.querySelector(".testimonials-text");
 
 const testimonials = [
     {
-        text: "I had my concerns that due to a tight deadline this project can't be done. But Florin proved me wrong not only he delivered an outstanding work but he managed to deliver 1 day prior to the deadline. And when I asked for some revisions he made them in MINUTES. I'm looking forward to work with him again and I totally recommend him. Thanks again Florin!",
-        name: "Arthur Birnbaum",
+        text: "I was inexperienced and knew nothing about the project, but they trusted that I could learn and deliver",
+        name: "John Wawira",
         // color: "rgba(235, 59, 90,1.0)",
         color: "rgba(32, 191, 107,1.0)",
     },
     {
         text: "Second time hiring him. Finished everything in a timely manner and his work is excellent. Can't recommend him enough.",
-        name: "Phoebe Kotliar",
+        name: "Danston Muthama",
         // color: "rgba(250, 130, 49,1.0)",
         color: "rgba(32, 191, 107,1.0)",
     },
     {
         text: "Alexandru Florin never fails to impress me by the quality of his work and delivering on time. When it comes to front-end, he is definitely my go to guy. Always is a pleasure to work with Alexandru even when deadlines are tight and pressure is great. It's reassuring to have a project in such good hands.",
-        name: "Louisa P. Huard",
+        name: "Kevin Oluoch",
         // color: "rgba(75, 123, 236,1.0)",
         color: "rgba(32, 191, 107,1.0)",
     },
     {
         text: "Florin has been of great help on our different web projects. He is very trustworthy and serious in the work done. Keep on the good work and energy, been a pleasure to collaborate.",
-        name: "Cristina Aurmoogum",
+        name: "Cristina Wafula",
         // color: "rgba(165, 94, 234,1.0)",
         color: "rgba(32, 191, 107,1.0)",
     },
